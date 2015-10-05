@@ -1,0 +1,7 @@
+@include media($mobile) {
+  body.index {
+    #titlebar_left .breadcrumb a:last-of-type:after {
+      content: "Menu";
+    }
+  }
+}

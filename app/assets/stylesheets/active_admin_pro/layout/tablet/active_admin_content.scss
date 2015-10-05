@@ -1,0 +1,9 @@
+@include media($tablet) {
+  #active_admin_content {
+    padding-top: $title-bar-min-height;
+  }
+
+  #main_content form {
+    overflow: hidden;
+  }
+}

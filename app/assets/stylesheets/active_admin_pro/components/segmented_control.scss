@@ -1,0 +1,41 @@
+$active-background-color: $accent-color;
+$active-font-color: text-color($accent-color);
+
+.table_tools_segmented_control {
+  @include clearfix;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    float: left;
+    margin-right: -1px;
+    position: relative;
+    z-index: 1;
+
+    &.selected {
+      z-index: 2;
+    }
+  }
+
+  a {
+    @include button;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  li.selected a {
+    background-image: linear-gradient(to bottom, lighten($active-background-color, 3%), darken($active-background-color, 5%));
+    color: $active-font-color;
+  }
+
+  li:first-of-type a {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+
+  li:last-of-type a {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+}

@@ -1,0 +1,16 @@
+$link-color: $accent-color;
+$link-color-active: color($accent-color, 700);
+$link-color-hover: color($accent-color, 300);
+
+a {
+  color: $link-color;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+
+  &:active,
+  &.active {
+    color: $link-color-active;
+  }
+}

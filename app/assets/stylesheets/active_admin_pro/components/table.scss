@@ -1,0 +1,100 @@
+$table-base-background-color: $white;
+$table-border-color: color($grey, 300);
+$table-header-background-color: transparent;
+$table-header-font-color: color($blue-grey, 700);
+$table-header-font-color-active: color($blue-grey, 900);
+$table-header-font-color-hover: $blue-grey;
+
+table {
+  margin-bottom: 1em;
+  width: 100%;
+
+  tr {
+    border-bottom: 1px solid $table-border-color;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+
+  thead tr:last-of-type {
+    border-bottom: 2px solid $table-header-font-color;
+  }
+
+  th {
+    background-color: $table-header-background-color;
+    color: $table-header-font-color;
+    font-weight: bold;
+    padding: 1em 1em 0.5em;
+    text-align: left;
+
+    a {
+      color: $table-header-font-color;
+      text-decoration: none;
+
+      &:hover {
+        color: $table-header-font-color-hover;
+      }
+
+      &:active,
+      &.active {
+        color: $table-header-font-color-active;
+      }
+    }
+
+    &.sortable {
+      white-space: nowrap;
+    }
+
+    &.sortable a:before {
+      content: "\f0dc";
+      display: inline-block;
+      font-family: "FontAwesome";
+      font-size: 0.85em;
+      font-weight: normal;
+      margin-right: 3px;
+      opacity: 0.5;
+      position: relative;
+      top: -1px;
+    }
+
+    &.sortable.sorted-asc a:before {
+      content: "\f0de";
+      opacity: 1;
+      top: 0;
+    }
+
+    &.sortable.sorted-desc a:before {
+      content: "\f0dd";
+      opacity: 1;
+      top: -2px;
+    }
+  }
+
+  td {
+    background-color: $table-base-background-color;
+    padding: 1em;
+    text-align: left;
+  }
+
+  .col-actions {
+    width: 10%;
+  }
+
+  .col-selectable {
+    text-align: center;
+    width: 40px;
+
+    input {
+      cursor: pointer;
+    }
+  }
+
+  .col-actions {
+    padding: 0 0.5em;
+
+    a {
+      padding: 1em 0.5em;
+    }
+  }
+}

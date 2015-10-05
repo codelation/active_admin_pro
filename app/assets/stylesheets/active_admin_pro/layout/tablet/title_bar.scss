@@ -1,0 +1,53 @@
+@include media($tablet) {
+  #title_bar {
+    @include clearfix;
+    @include display(flex);
+    background-color: $title-background-color;
+    box-shadow: 0 1px 2px rgba($black, 0.2);
+    color: $title-font-color;
+    min-height: $title-bar-min-height;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+
+    a {
+      color: $breadcrumb-link-color;
+      display: inline-block;
+      height: $title-bar-min-height;
+      line-height: $title-bar-min-height;
+      overflow: hidden;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+
+      &:hover {
+        color: rgba($breadcrumb-link-color, 1.2);
+      }
+
+      &:active,
+      &.active {
+        color: $title-font-color;
+      }
+    }
+  }
+
+  #titlebar_left {
+    @include flex(75);
+  }
+
+  #titlebar_right {
+    @include flex(25);
+
+    &:empty {
+      @include flex(10);
+    }
+  }
+
+  #titlebar_right .action_items {
+    a {
+      padding-right: 10px;
+      text-align: right;
+    }
+  }
+}

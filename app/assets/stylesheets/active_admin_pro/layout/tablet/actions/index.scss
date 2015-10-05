@@ -1,0 +1,20 @@
+@include media($tablet) {
+  body.index {
+    #titlebar_left .breadcrumb a:last-of-type {
+      position: relative;
+      visibility: hidden;
+
+      &:before,
+      &:after {
+        visibility: visible;
+      }
+
+      &:after {
+        content: "Main Menu";
+        left: 1em;
+        padding-left: 5px;
+        position: absolute;
+      }
+    }
+  }
+}

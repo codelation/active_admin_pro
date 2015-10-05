@@ -1,0 +1,105 @@
+$navigation-background-color: $white;
+$navigation-border-color: rgba($grey, 0.3);
+
+@include media($tablet) {
+  body[class*="dashboard"][class*="index"] {
+    #title_bar,
+    #active_admin_content,
+    #footer {
+      display: none;
+    }
+
+    #header {
+      background-color: $navigation-background-color;
+      bottom: 0;
+      display: block;
+      font-size: $navigation-base-font-size - 1px;
+      left: 0;
+      max-width: 100%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    #site_title {
+      background-color: $title-background-color;
+      box-shadow: 0 1px 2px rgba($black, 0.2);
+      color: $title-font-color;
+      font-size: 1em;
+      font-weight: normal;
+      letter-spacing: 4px;
+      margin: 0;
+      min-height: $base-font-size * 2.9;
+      padding: 1em 1.5em 0.9em;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+      white-space: nowrap;
+      z-index: 3;
+    }
+
+    #tabs {
+      @include clearfix;
+      bottom: 2.5em;
+      left: 0;
+      list-style-type: none;
+      margin: 0;
+      overflow: auto;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: $base-font-size * 2.9;
+
+      li {
+        display: block;
+        left: 0;
+        position: relative;
+        right: 0;
+      }
+
+      i.fa {
+        display: inline-block;
+        font-size: 0.89em;
+        position: relative;
+        text-align: center;
+        top: 0.04em;
+        vertical-align: top;
+        width: 1.5em;
+      }
+
+      a {
+        background-color: $navigation-background-color;
+        color: $navigation-link-color;
+        display: block;
+        font-size: 1.2em;
+        padding: 1.5em 0 1.5em 1.5em;
+        position: relative;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        text-decoration: none;
+        vertical-align: bottom;
+        white-space: nowrap;
+        z-index: 2;
+
+        &:after {
+          background-color: $navigation-border-color;
+          content: "";
+          display: block;
+          height: 1px;
+          position: relative;
+          top: 1.5em;
+        }
+
+        &:hover {
+          background-color: $navigation-link-background-color-hover;
+          color: $navigation-link-color-hover;
+        }
+
+        &:active,
+        &.active {
+          background-color: $navigation-link-background-color-active;
+          color: $navigation-link-color-active;
+        }
+      }
+    }
+  }
+}

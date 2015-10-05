@@ -1,0 +1,7 @@
+.button,
+button,
+input[type="button"],
+input[type="submit"] {
+  @include button($active-background-color: color($accent-color, 600), $active-font-color: $white);
+  margin-right: 1em;
+}

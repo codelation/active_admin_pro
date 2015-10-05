@@ -1,0 +1,48 @@
+@include media($tablet) {
+  #header {
+    display: none;
+  }
+
+  #title_bar #titlebar_left {
+    @include clearfix;
+    @include display(flex);
+
+    .breadcrumb {
+      @include flex(30);
+    }
+
+    a {
+      display: none;
+
+      &:last-of-type {
+        display: inline-block;
+        padding-left: 10px;
+
+        &:before {
+          content: "\f104";
+          display: inline-block;
+          font-family: "FontAwesome";
+          margin-right: 4px;
+        }
+      }
+    }
+
+    .breadcrumb_sep {
+      display: none;
+    }
+
+    h2 {
+      @include flex(70);
+      font-size: $base-font-size;
+      font-weight: bold;
+      height: $title-bar-min-height;
+      line-height: $title-bar-min-height;
+      margin: 0;
+      overflow: hidden;
+      padding: 0 2%;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

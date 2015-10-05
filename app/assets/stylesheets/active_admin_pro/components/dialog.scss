@@ -1,0 +1,56 @@
+@import "./link";
+
+.ui-widget-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1001;
+}
+
+.ui-dialog {
+  background-color: $white;
+  box-shadow: 0 1px 2px rgba($black, 0.3);
+  left: 50% !important;
+  margin-left: -160px;
+  outline: none;
+  padding: 2em 2em 1em;
+  position: fixed !important;
+  top: 20% !important;
+  width: 320px !important;
+  z-index: 1002;
+
+  .ui-dialog-title {
+    display: block;
+    margin-bottom: 2em;
+  }
+
+  .ui-dialog-titlebar-close {
+    display: none;
+  }
+
+  #dialog_confirm {
+    display: none !important;
+  }
+
+  button + button {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    color: $link-color;
+    font-size: 12px;
+    margin-left: -0.5em;
+    text-decoration: underline;
+
+    &:hover {
+      color: $link-color-hover;
+    }
+
+    &:active,
+    &.active {
+      color: $link-color-active;
+    }
+  }
+}

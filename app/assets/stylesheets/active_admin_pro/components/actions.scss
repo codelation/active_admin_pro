@@ -1,0 +1,13 @@
+.actions {
+  ol {
+    @include clearfix;
+
+    li {
+      float: left;
+    }
+  }
+
+  .cancel {
+    padding-top: 0.35em;
+  }
+}

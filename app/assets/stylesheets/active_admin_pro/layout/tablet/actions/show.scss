@@ -1,0 +1,78 @@
+@include media($tablet) {
+  body.show {
+    #titlebar_right {
+      @include flex(12);
+      color: $breadcrumb-link-color;
+      cursor: pointer;
+      overflow: visible;
+      padding-right: 1.2em;
+      position: relative;
+      text-align: right;
+
+      &:before {
+        content: "\f013";
+        display: inline-block;
+        font-family: "FontAwesome";
+        height: $title-bar-min-height;
+        line-height: $title-bar-min-height;
+
+        &:hover {
+          color: rgba($breadcrumb-link-color, 1.2);
+        }
+
+        &:active,
+        &.active {
+          color: $title-font-color;
+        }
+      }
+
+      &:after {
+        content: "\f0d7";
+        display: block;
+        font-family: "FontAwesome";
+        font-size: 0.7em;
+        position: absolute;
+        right: 10px;
+        top: 17px;
+      }
+    }
+
+    #titlebar_right .action_items {
+      background-color: $white;
+      box-shadow: 0 1px 3px rgba($black, 0.4);
+      display: none;
+      float: left;
+      list-style-type: none;
+      margin: -2px 0 0;
+      padding: 0;
+      position: absolute;
+      right: 10px;
+      top: 90%;
+      width: auto;
+      z-index: 10;
+
+      a {
+        color: $base-font-color;
+        display: block;
+        padding: 0 1em;
+        text-align: left;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $base-background-color;
+          color: $base-font-color;
+        }
+
+        &:active,
+        &.active {
+          background-color: $accent-color;
+          color: text-color($accent-color);
+        }
+      }
+    }
+
+    #titlebar_right.active .action_items {
+      display: block;
+    }
+  }
+}

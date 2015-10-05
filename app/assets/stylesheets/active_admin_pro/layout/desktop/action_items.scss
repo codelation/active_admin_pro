@@ -1,0 +1,32 @@
+$action-item-background-color: $accent-color;
+$action-item-link-color: text-color($action-item-background-color);
+$action-item-link-color-active: $action-item-link-color;
+$action-item-link-color-hover: $action-item-link-color;
+
+@if $action-item-link-color == $white {
+  $action-item-link-color: rgba($action-item-link-color, 0.9);
+} @else {
+  $action-item-link-color: rgba($action-item-link-color, 0.6);
+}
+
+@include media($desktop) {
+  #titlebar_right {
+    @include clearfix;
+    float: right;
+    padding: 0 2em 0 0;
+
+    .action_item {
+      @include align-items(center);
+      @include display(flex);
+      @include justify-content(center);
+      float: left;
+      height: $base-font-size * 2.9;
+      margin-left: 4px;
+    }
+
+    a {
+      @include button($background-color: $accent-color, $font-color: text-color($accent-color), $active-background-color: color($accent-color, 600), $active-font-color: $white);
+      margin-top: 2px;
+    }
+  }
+}

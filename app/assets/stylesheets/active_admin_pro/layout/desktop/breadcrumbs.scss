@@ -1,0 +1,56 @@
+$title-background-color: $primary-color;
+$title-bar-min-height:   $base-font-size * 2.9;
+$title-font-color:       text-color($primary-color);
+
+$breadcrumb-link-color: rgba($title-font-color, 0.6);
+@if $title-font-color == $white {
+  $breadcrumb-link-color: rgba($title-font-color, 0.9);
+}
+
+@include media($desktop) {
+  #titlebar_left {
+    float: left;
+    padding: 0.8em 0 0.8em 2em;
+
+    .breadcrumb,
+    #page_title {
+      display: inline-block;
+      font-size: $base-font-size;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      border-bottom: 1px dotted $breadcrumb-link-color;
+      color: $breadcrumb-link-color;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px dotted $title-font-color;
+        color: rgba($breadcrumb-link-color, 1.2);
+      }
+
+      &:active,
+      &.active {
+        border-bottom: 1px dotted $title-font-color;
+        color: $title-font-color;
+      }
+    }
+
+    // Invisibly float the root link over the site title
+    a:first-of-type {
+      border-color: transparent;
+      color: transparent;
+      font-size: $base-font-size;
+      height: $title-bar-min-height;
+      left: -$navigation-width;
+      position: absolute;
+      top: 0;
+      width: $navigation-width;
+    }
+
+    .breadcrumb_sep:first-of-type {
+      display: none;
+    }
+  }
+}

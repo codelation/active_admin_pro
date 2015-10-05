@@ -1,0 +1,25 @@
+body.show {
+  .attributes_table {
+    overflow-x: auto;
+
+    tr {
+      border-bottom: 0;
+    }
+
+    tbody th {
+      background-color: $base-background-color;
+      min-width: 140px;
+      padding: 0.66em;
+      text-align: right;
+      width: 17%;
+
+      &:after {
+        content: ":";
+      }
+    }
+
+    td {
+      padding: 0.66em;
+    }
+  }
+}

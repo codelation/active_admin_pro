@@ -1,0 +1,5 @@
+@include media($desktop) {
+  #sidebar {
+    padding: (36px + ($base-font-size * 2)) ($base-font-size * 2) $base-font-size $base-font-size;
+  }
+}

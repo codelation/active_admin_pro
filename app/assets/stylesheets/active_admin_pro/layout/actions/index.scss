@@ -1,0 +1,80 @@
+$table-border-color: color($grey, 300);
+
+body.index {
+  #main_content form {
+    padding-bottom: 1.5em;
+    position: relative;
+  }
+
+  .index_as_table {
+    overflow-x: auto;
+  }
+
+  table {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+
+  #index_footer {
+    @include clearfix;
+    font-size: 0.9em;
+    left: 0;
+    margin-top: 0.5em;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+
+  .pagination {
+    border-top: 1px solid $table-border-color;
+    left: $base-font-size * 2;
+    padding: 0.9em 0 0;
+    position: absolute;
+    right: $base-font-size * 2;
+    text-align: center;
+    top: -3.45em;
+
+    @include media($mobile) {
+      left: $base-font-size;
+      right: $base-font-size;
+    }
+
+    a {
+      padding: 0.5em;
+      text-decoration: none;
+
+      &:hover,
+      &:active,
+      &.active {
+        text-decoration: underline;
+      }
+    }
+
+    .first {
+      left: 0;
+      position: absolute;
+    }
+
+    .last {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .pagination_information {
+    left: 0.5%;
+    position: absolute;
+    top: 100%;
+  }
+
+  .download_links {
+    position: absolute;
+    right: 0.5%;
+    top: 100%;
+
+    a {
+      display: inline-block;
+      padding: 0 1px;
+    }
+  }
+}

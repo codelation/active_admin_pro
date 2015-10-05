@@ -1,0 +1,22 @@
+@include media($desktop) {
+  #active_admin_content {
+    @include align-items(stretch);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(flex-start);
+    overflow: hidden;
+  }
+
+  #main_content_wrapper {
+    @include flex(10);
+    padding: (36px + ($base-font-size * 2)) $base-font-size $base-font-size ($base-font-size * 2);
+  }
+
+  #sidebar {
+    @include flex(4);
+  }
+
+  #active_admin_content.without_sidebar #main_content_wrapper {
+    padding-right: $base-font-size * 2;
+  }
+}

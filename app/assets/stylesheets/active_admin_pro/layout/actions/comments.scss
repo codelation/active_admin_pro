@@ -1,0 +1,14 @@
+body.admin_comments.index {
+  #main_content {
+    @include clearfix;
+    background-color: $white;
+    box-shadow: 0 1px 2px rgba($black, 0.2);
+    margin-bottom: 2em;
+    padding: 2em 2em 1em;
+    position: relative;
+  }
+}
+
+#active_admin_comment_body {
+  width: 100%;
+}

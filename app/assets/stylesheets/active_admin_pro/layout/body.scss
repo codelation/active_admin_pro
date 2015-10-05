@@ -1,0 +1,33 @@
+$selection-background-color: $accent-color;
+$selection-font-color: text-color($accent-color);
+
+html { // http://bit.ly/1qk2tVR
+  box-sizing: border-box;
+
+  @include selection {
+    background-color: $selection-background-color;
+    color: $selection-font-color;
+  }
+}
+
+* {
+  &,
+  &::after,
+  &::before {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  background-color: $base-background-color;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizelegibility;
+}
+
+object[type="application/x-shockwave-flash"] {
+  display: none;
+}
