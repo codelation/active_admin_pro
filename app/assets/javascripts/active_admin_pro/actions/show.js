@@ -1,5 +1,5 @@
 // Enable dropdown for multiple actions on show pages.
-$(document).on('ready page:load', function() {
+App.ready(function() {
   "use strict";
 
   $('body.show #titlebar_right').click(function() {

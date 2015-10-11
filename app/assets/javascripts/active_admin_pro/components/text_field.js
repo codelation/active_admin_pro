@@ -1,7 +1,7 @@
 // This is a Google Material Design inspired text field.
 // The JavaScript doesn't do much. It just set the classes needed
 // by the CSS based on the input's focus and blank/filled states.
-$(document).on('ready page:load', function() {
+App.ready(function() {
   "use strict";
 
   $('.input.stringish').each(function() {
@@ -34,4 +34,7 @@ $(document).on('ready page:load', function() {
     setContainerCssClass();
     container.addClass('animate');
   });
+
+  console.log('$(".datepicker")', $(".datepicker"));
+  $(".datepicker").datepicker("setDate", "2015-01-01");
 });

@@ -3,7 +3,7 @@
 
 // Enable Pikaday date picker fields
 // @see https://github.com/dbushell/Pikaday
-$(document).on('ready page:load', function() {
+App.ready(function() {
   "use strict";
 
   $('.pikaday').each(function() {

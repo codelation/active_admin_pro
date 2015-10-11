@@ -1,14 +1,13 @@
-// Add active class on click to style while loading via turbolinks.
-var linksSelector = 'a:not([data-method="delete"]):not(.dropdown_menu_button):not([target="_blank"])';
-$(document).on('ready page:load', function() {
+App.ready(function() {
   "use strict";
+  var links = $('a:not([data-method="delete"]):not(.has_many_add):not(.dropdown_menu_button):not([target="_blank"])');
 
-  $(linksSelector).click(function() {
+  // Add active class on click to style while loading via turbolinks.
+  links.click(function() {
     var link = $(this);
     link.addClass('active');
   });
-});
 
-$(document).on('page:change', function() {
-  $(linksSelector).removeClass('active');
+  // Remove active class on page load
+  links.removeClass('active');
 });

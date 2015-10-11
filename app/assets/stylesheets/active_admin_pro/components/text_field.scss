@@ -1,12 +1,12 @@
 $error-color: $red;
 $label-font-color: color($grey, 800);
-$label-font-color-focused: color($blue-grey, 700);
+$label-font-color-focused: color($accent-color, 700);
 $input-border-color: $label-font-color;
 $input-border-color-focused: $accent-color;
 $input-font-color: color($grey, 600);
 $input-font-color-focused: color($grey, 800);
 $input-placeholder-color: color($grey, 400);
-$input-required-color: $accent-color;
+$input-required-color: color($accent-color, 400);
 
 // Google Material Design inspired string input with floating label
 .input.stringish {

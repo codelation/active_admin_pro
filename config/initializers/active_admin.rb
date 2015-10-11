@@ -19,4 +19,4 @@ end
 config.meta_tags ||= {}
 config.meta_tags["apple-mobile-web-app-capable"] ||= "yes"
 config.meta_tags["apple-mobile-web-app-title"]   ||= "Admin"
-config.meta_tags["viewport"]                     ||= "width=device-width, initial-scale=1.0"
+config.meta_tags["viewport"]                     ||= "initial-scale=1, maximum-scale=1, width=device-width"
