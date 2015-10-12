@@ -34,7 +34,4 @@ App.ready(function() {
     setContainerCssClass();
     container.addClass('animate');
   });
-
-  console.log('$(".datepicker")', $(".datepicker"));
-  $(".datepicker").datepicker("setDate", "2015-01-01");
 });

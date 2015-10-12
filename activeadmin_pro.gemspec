@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*", "LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
+  s.add_dependency "activeadmin"
   s.add_dependency "rails", "~> 4.2"
   s.add_dependency "turbolinks", "~> 2.5"
 
