@@ -1,2 +1,2 @@
-class SummernoteInput < Formtastic::Inputs::StringInput
+class SummernoteInput < Formtastic::Inputs::TextInput
 end

@@ -22,7 +22,7 @@ $input-required-color: color($accent-color, 400);
     @include transform-origin(0 0);
     @include transition(font-size 180ms $transition-timing, transform 180ms $transition-timing);
     color: $input-placeholder-color;
-    cursor: text;
+    cursor: pointer;
     display: block;
     font-weight: 300;
     padding-top: 1em;
