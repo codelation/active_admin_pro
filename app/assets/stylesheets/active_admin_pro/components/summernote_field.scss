@@ -6,6 +6,80 @@
   margin-bottom: 2em;
   position: relative;
 
+  .panel.note-editor {
+    background: #fff;
+    border: 1px solid $base-background-color;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+
+    .btn {
+      background-image: none;
+      border-radius: 3px;
+      text-shadow: none;
+    }
+
+    > div {
+      padding: 0;
+    }
+
+    .note-fontsize .dropdown-menu {
+      max-height: 200px;
+      overflow: auto;
+    }
+
+    label {
+      width: auto;
+    }
+
+    .modal.in {
+      background-color: rgba(#000, 0.5);
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 999;
+    }
+
+    .note-dialog {
+      button.close {
+        background-color: transparent;
+        background-image: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
+
+    .note-editable {
+      background-color: #fff;
+      max-height: 95%;
+
+      ol {
+        list-style-type: decimal;
+        padding-left: 2em;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 2em;
+      }
+    }
+
+    .note-toolbar {
+      background-color: #f7f7f7;
+      padding: 10px 15px;
+
+      a {
+        text-decoration: none;
+      }
+
+      .note-color-btn {
+        background-image: none;
+      }
+    }
+  }
+
   label {
     color: $label-font-color;
     cursor: pointer;
@@ -31,4 +105,19 @@
   //   position: absolute;
   //   top: 100%;
   // }
+
+  &.focused {
+    label {
+      color: $label-font-color-focused;
+      font-weight: 500;
+
+      abbr {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.modal-backdrop.in {
+  display: none;
 }
