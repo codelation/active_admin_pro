@@ -1,0 +1,34 @@
+@import "summernote";
+@import "summernote-bs3";
+@import "./text_field";
+
+.input.summernote {
+  margin-bottom: 2em;
+  position: relative;
+
+  label {
+    color: $label-font-color;
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    width: 100%;
+
+    abbr {
+      @include transition(opacity 50ms $transition-timing);
+      border-bottom: 0;
+      color: $input-required-color;
+      margin-left: 2px;
+      opacity: 0.5;
+    }
+  }
+
+  // .inline-errors {
+  //   color: $error-color;
+  //   left: 0;
+  //   margin: 3px 0 0;
+  //   position: absolute;
+  //   top: 100%;
+  // }
+}
