@@ -1,13 +1,18 @@
 @import "summernote";
 @import "summernote-bs3";
 
+$summernote-field-border-color: #f1f1f1;
+$summernote-field-border-color-active: #e7e7e7;
+$summernote-field-toolbar-background-color: #f7f7f7;
+
 .input.summernote {
   margin-bottom: 2em;
   position: relative;
 
   .panel.note-editor {
-    background: #fff;
-    border: 1px solid $base-background-color;
+    background: $white;
+    border: 0;
+    border-radius: 2px;
     box-shadow: none;
     margin: 0;
     padding: 0;
@@ -15,6 +20,9 @@
     .btn {
       background-image: none;
       border-radius: 3px;
+      box-shadow: none;
+      height: auto;
+      line-height: normal;
       text-shadow: none;
     }
 
@@ -51,7 +59,7 @@
     }
 
     .note-editable {
-      background-color: #fff;
+      background-color: $white;
       max-height: 95%;
 
       ol {
@@ -66,7 +74,10 @@
     }
 
     .note-toolbar {
-      background-color: #f7f7f7;
+      background-color: $summernote-field-toolbar-background-color;
+      border: 1px solid $summernote-field-border-color;
+      border-bottom: 0;
+      border-radius: 0;
       padding: 10px 15px;
 
       a {
@@ -77,6 +88,17 @@
         background-image: none;
       }
     }
+
+    .note-statusbar {
+      border: 1px solid $summernote-field-border-color;
+      border-top: 0;
+      padding-bottom: 1px;
+    }
+  }
+
+  .note-editing-area {
+    border: 1px solid $summernote-field-border-color;
+    position: relative;
   }
 
   label {
@@ -113,6 +135,11 @@
       abbr {
         opacity: 0.8;
       }
+    }
+
+    .note-editing-area {
+      border: 1px solid $summernote-field-border-color-active;
+      position: relative;
     }
   }
 }

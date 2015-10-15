@@ -1,9 +1,17 @@
 $table-border-color: color($grey, 300);
 
 body.index {
+  .paginated_collection {
+    position: relative;
+  }
+
   #main_content form {
     padding-bottom: 1.5em;
     position: relative;
+
+    .paginated_collection {
+      position: static;
+    }
   }
 
   .index_as_table {

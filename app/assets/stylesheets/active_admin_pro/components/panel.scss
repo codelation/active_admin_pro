@@ -1,6 +1,7 @@
 $panel-heading-color: color($blue-grey, 700);
 
 form,
+.paginated_collection,
 .panel {
   background-color: $white;
   box-shadow: 0 1px 2px rgba($black, 0.2);
@@ -10,6 +11,12 @@ form,
   form {
     box-shadow: none;
     margin-bottom: 1em;
+    padding: 0;
+  }
+
+  .paginated_collection {
+    box-shadow: none;
+    margin-bottom: 0;
     padding: 0;
   }
 
