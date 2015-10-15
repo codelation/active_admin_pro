@@ -1,3 +1,4 @@
+@import "codemirror";
 @import "summernote";
 @import "summernote-bs3";
 
@@ -98,7 +99,9 @@ $summernote-field-toolbar-background-color: #f7f7f7;
 
   .note-editing-area {
     border: 1px solid $summernote-field-border-color;
+    overflow: hidden;
     position: relative;
+    width: 100%;
   }
 
   label {
@@ -137,8 +140,15 @@ $summernote-field-toolbar-background-color: #f7f7f7;
       }
     }
 
+    .panel.note-editor {
+      .note-toolbar,
+      .note-editing-area,
+      .note-statusbar {
+        border-color: $summernote-field-border-color-active;
+      }
+    }
+
     .note-editing-area {
-      border: 1px solid $summernote-field-border-color-active;
       position: relative;
     }
   }

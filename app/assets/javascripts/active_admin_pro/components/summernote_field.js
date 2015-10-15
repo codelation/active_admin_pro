@@ -1,4 +1,9 @@
 //= require bootstrap
+//= require codemirror
+//= require codemirror/modes/css
+//= require codemirror/modes/javascript
+//= require codemirror/modes/xml
+//= require codemirror/modes/htmlmixed
 //= require summernote
 
 // Summer note editor field.
@@ -19,9 +24,14 @@ App.ready(function() {
   $('.input.summernote').each(function() {
     var wrapper = $(this);
     var summernoteField = wrapper.find('textarea').summernote({
-      height:    200,
-      minHeight: 180,
-      toolbar:   toolbar,
+      codemirror: {
+        lineNumbers: true,
+        mode:        'htmlmixed'
+      },
+      height:     200,
+      minHeight:  180,
+      tabsize:    2,
+      toolbar:    toolbar,
 
       onBlur: function(e) {
         wrapper.removeClass('focused');
