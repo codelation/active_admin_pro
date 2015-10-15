@@ -19,8 +19,9 @@ App.ready(function() {
   $('.input.summernote').each(function() {
     var wrapper = $(this);
     var summernoteField = wrapper.find('textarea').summernote({
-      height:  250,
-      toolbar: toolbar,
+      height:    200,
+      minHeight: 180,
+      toolbar:   toolbar,
 
       onBlur: function(e) {
         wrapper.removeClass('focused');

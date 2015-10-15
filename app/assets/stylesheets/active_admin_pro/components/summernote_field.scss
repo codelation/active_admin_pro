@@ -1,6 +1,5 @@
 @import "summernote";
 @import "summernote-bs3";
-@import "./text_field";
 
 .input.summernote {
   margin-bottom: 2em;
@@ -98,13 +97,13 @@
     }
   }
 
-  // .inline-errors {
-  //   color: $error-color;
-  //   left: 0;
-  //   margin: 3px 0 0;
-  //   position: absolute;
-  //   top: 100%;
-  // }
+  .inline-errors {
+    border-top: 1px solid $error-color;
+    color: $error-color;
+    display: block;
+    margin-top: 0;
+    padding-top: 3px;
+  }
 
   &.focused {
     label {
