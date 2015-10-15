@@ -21,9 +21,11 @@ App.ready(function() {
 
   $('.has_many_add').click(function() {
     setTimeout(function() {
+      activateSelectBehavior('.has_many_fields:last .input.country');
       activateSelectBehavior('.has_many_fields:last .input.select');
     }, 0);
   });
 
+  activateSelectBehavior('.input.country');
   activateSelectBehavior('.input.select');
 });

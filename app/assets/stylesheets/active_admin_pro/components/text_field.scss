@@ -1,7 +1,7 @@
 $error-color: $red;
 $label-font-color: color($grey, 800);
 $label-font-color-focused: color($accent-color, 700);
-$input-border-color: color($grey, 700);
+$input-border-color: $grey;
 $input-border-color-focused: $accent-color;
 $input-font-color: color($grey, 600);
 $input-font-color-focused: color($grey, 800);
