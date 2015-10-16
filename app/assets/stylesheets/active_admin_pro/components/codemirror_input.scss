@@ -1,4 +1,11 @@
 @import "codemirror";
+@import "codemirror/themes/activeadmin_pro";
+@import "codemirror/themes/base16-dark";
+@import "codemirror/themes/base16-light";
+@import "codemirror/themes/dracula";
+@import "codemirror/themes/monokai";
+@import "codemirror/themes/solarized";
+@import "codemirror/themes/vibrant-ink";
 
 $codemirror-border-color: #f1f1f1;
 $codemirror-border-color-active: #e7e7e7;

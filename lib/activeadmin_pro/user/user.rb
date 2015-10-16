@@ -14,7 +14,7 @@ ActiveAdmin.register User do
 
   form do |f|
     inputs "Details" do
-      input :name
+      input :name, as: :codemirror, codemirror: { line_numbers: true, mode: :gfm }
       input :email
       input :password if f.object.new_record?
     end
