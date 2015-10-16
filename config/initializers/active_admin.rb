@@ -29,4 +29,17 @@ ActiveAdmin.application.tap do |config|
   config.meta_tags["apple-mobile-web-app-capable"] ||= "yes"
   config.meta_tags["apple-mobile-web-app-title"]   ||= "Admin"
   config.meta_tags["viewport"]                     ||= "initial-scale=1, maximum-scale=1, width=device-width"
+
+  # Add default interfaces for AdminUser and User models in Active Admin if the models exist.
+  # Since we're using `load_paths.unshift`, the app's Active Admin registration of models
+  # will override the Active Admin Pro registrations of the AdminUser and User models.
+  if File.exist?(File.join(Rails.root, "app", "models", "admin_user.rb"))
+    config.load_paths.unshift File.join(File.expand_path("../../..", __FILE__), "lib", "activeadmin_pro", "admin_user")
+  end
+  if File.exist?(File.join(Rails.root, "app", "models", "user.rb"))
+    puts "USER EXISTS"
+    config.load_paths.unshift File.join(File.expand_path("../../..", __FILE__), "lib", "activeadmin_pro", "user")
+  else
+    puts "NO USER!?!?!?!?!?"
+  end
 end

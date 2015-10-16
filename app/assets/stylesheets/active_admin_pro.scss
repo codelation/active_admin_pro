@@ -26,9 +26,10 @@
 @import "active_admin_pro/components/table";
 
 // Active Admin/Formtastic Inputs
-@import "active_admin_pro/components/text_field";
-@import "active_admin_pro/components/select_field";
-@import "active_admin_pro/components/summernote_field";
+@import "active_admin_pro/components/text_input";
+@import "active_admin_pro/components/codemirror_input";
+@import "active_admin_pro/components/select_input";
+@import "active_admin_pro/components/summernote_input";
 
 // Layout styles shared between all sizes
 @import "active_admin_pro/layout/body";

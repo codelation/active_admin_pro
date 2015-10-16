@@ -2,9 +2,9 @@
 @import "summernote";
 @import "summernote-bs3";
 
-$summernote-field-border-color: #f1f1f1;
-$summernote-field-border-color-active: #e7e7e7;
-$summernote-field-toolbar-background-color: #f7f7f7;
+$summernote-border-color: #f1f1f1;
+$summernote-border-color-active: #e7e7e7;
+$summernote-toolbar-background-color: #f7f7f7;
 
 .input.summernote {
   margin-bottom: 2em;
@@ -75,8 +75,8 @@ $summernote-field-toolbar-background-color: #f7f7f7;
     }
 
     .note-toolbar {
-      background-color: $summernote-field-toolbar-background-color;
-      border: 1px solid $summernote-field-border-color;
+      background-color: $summernote-toolbar-background-color;
+      border: 1px solid $summernote-border-color;
       border-bottom: 0;
       border-radius: 0;
       padding: 10px 15px;
@@ -91,14 +91,14 @@ $summernote-field-toolbar-background-color: #f7f7f7;
     }
 
     .note-statusbar {
-      border: 1px solid $summernote-field-border-color;
+      border: 1px solid $summernote-border-color;
       border-top: 0;
       padding-bottom: 1px;
     }
   }
 
   .note-editing-area {
-    border: 1px solid $summernote-field-border-color;
+    border: 1px solid $summernote-border-color;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -144,7 +144,7 @@ $summernote-field-toolbar-background-color: #f7f7f7;
       .note-toolbar,
       .note-editing-area,
       .note-statusbar {
-        border-color: $summernote-field-border-color-active;
+        border-color: $summernote-border-color-active;
       }
     }
 
