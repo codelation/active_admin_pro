@@ -6,7 +6,7 @@
 //= require codemirror/modes/htmlmixed
 //= require summernote
 
-// Summer note editor field.
+// Summernote editor field.
 // @see http://summernote.org
 App.ready(function() {
   "use strict";
@@ -23,10 +23,11 @@ App.ready(function() {
 
   $('.input.summernote').each(function() {
     var wrapper = $(this);
-    var summernoteField = wrapper.find('textarea').summernote({
+    var summernoteInput = wrapper.find('textarea').summernote({
       codemirror: {
         lineNumbers: true,
-        mode:        'htmlmixed'
+        mode:        'htmlmixed',
+        theme:       'activeadmin_pro'
       },
       height:     200,
       minHeight:  180,
@@ -43,7 +44,7 @@ App.ready(function() {
     });
 
     wrapper.find('label').click(function() {
-      summernoteField.summernote('focus');
+      summernoteInput.summernote('focus');
     });
   });
 });

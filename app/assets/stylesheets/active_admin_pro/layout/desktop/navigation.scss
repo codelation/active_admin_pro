@@ -16,6 +16,7 @@ $user-links-font-color:                   text-color($primary-color);
     background-color: $navigation-background-color;
     bottom: 0;
     font-size: $navigation-base-font-size - 1px;
+    -webkit-font-smoothing: subpixel-antialiased;
     left: 0;
     max-width: $navigation-width;
     min-width: $navigation-width;

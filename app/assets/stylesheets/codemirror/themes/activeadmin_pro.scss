@@ -1,0 +1,117 @@
+// Pretty good CodeMirror theme that matches the Google Material Design colors
+.cm-s-activeadmin_pro.CodeMirror {
+  background: color($blue-grey, 50);
+  color: color($grey, 800);
+}
+
+.cm-s-activeadmin_pro div.CodeMirror-selected {
+  background: color($blue-grey, 100);
+}
+
+.cm-s-activeadmin_pro .CodeMirror-line::selection,
+.cm-s-activeadmin_pro .CodeMirror-line > span::selection,
+.cm-s-activeadmin_pro .CodeMirror-line > span > span::selection {
+  background: rgba(color($blue-grey, 50), 0.99);
+}
+
+.cm-s-activeadmin_pro .CodeMirror-line::-moz-selection,
+.cm-s-activeadmin_pro .CodeMirror-line > span::-moz-selection,
+.cm-s-activeadmin_pro .CodeMirror-line > span > span::-moz-selection {
+  background: rgba(color($blue-grey, 50), 0.99);
+}
+
+.cm-s-activeadmin_pro .CodeMirror-gutters {
+  background: color($blue-grey, 100);
+  color: color($blue-grey, 800);
+  border-right: 0;
+}
+
+.cm-s-activeadmin_pro .CodeMirror-guttermarker {
+  color: $white;
+}
+
+.cm-s-activeadmin_pro .CodeMirror-guttermarker-subtle {
+  color: color($blue-grey, 800);
+}
+
+.cm-s-activeadmin_pro .CodeMirror-linenumber {
+  color: color($blue-grey, 800);
+}
+
+.cm-s-activeadmin_pro .CodeMirror-cursor {
+  border-left: 1px solid $black;
+}
+
+.cm-s-activeadmin_pro span.cm-comment {
+  color: $grey;
+}
+
+.cm-s-activeadmin_pro span.cm-atom {
+  color: $deep-purple;
+}
+
+.cm-s-activeadmin_pro span.cm-number {
+  color: color($cyan, 700);
+}
+
+.cm-s-activeadmin_pro span.cm-property {
+  color: color($amber, 700);
+}
+
+.cm-s-activeadmin_pro span.cm-attribute {
+  color: $deep-purple;
+}
+
+.cm-s-activeadmin_pro span.cm-keyword {
+  color: $pink;
+}
+
+.cm-s-activeadmin_pro span.cm-string {
+  color: $blue;
+}
+
+.cm-s-activeadmin_pro span.cm-variable {
+  color: color($grey, 800);
+}
+
+.cm-s-activeadmin_pro span.cm-variable-2 {
+  color: color($grey, 800);
+}
+
+.cm-s-activeadmin_pro span.cm-variable-3 {
+  color: color($grey, 800);
+}
+
+.cm-s-activeadmin_pro span.cm-def {
+  color: $indigo;
+}
+
+.cm-s-activeadmin_pro span.cm-bracket {
+  color: $green;
+}
+
+.cm-s-activeadmin_pro span.cm-tag {
+  color: $deep-purple;
+}
+
+.cm-s-activeadmin_pro span.cm-header {
+  color: color($blue, 700);
+}
+
+.cm-s-activeadmin_pro span.cm-link {
+  color: $yellow;
+}
+
+.cm-s-activeadmin_pro span.cm-error {
+  background: $red;
+  color: $white;
+}
+
+.cm-s-activeadmin_pro .CodeMirror-activeline-background {
+  background: $amber;
+}
+
+.cm-s-activeadmin_pro .CodeMirror-matchingbracket {
+  background: color($blue-grey, 100);
+  color: $black !important;
+}

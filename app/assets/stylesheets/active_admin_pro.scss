@@ -10,55 +10,11 @@
 @import "active_admin_pro/vendor/neat";
 @import "active_admin_pro/breakpoints";
 
-// Active Admin Mixins
-@import "active_admin_pro/mixins/button";
+// Mixins
+@import "active_admin_pro/mixins/**/*";
 
-// Active Admin Components
-@import "active_admin_pro/components/actions";
-@import "active_admin_pro/components/button";
-@import "active_admin_pro/components/comments";
-@import "active_admin_pro/components/dialog";
-@import "active_admin_pro/components/dropdown_menu_button";
-@import "active_admin_pro/components/fieldset";
-@import "active_admin_pro/components/link";
-@import "active_admin_pro/components/panel";
-@import "active_admin_pro/components/segmented_control";
-@import "active_admin_pro/components/table";
+// Component Styles
+@import "active_admin_pro/components/**/*";
 
-// Active Admin/Formtastic Inputs
-@import "active_admin_pro/components/text_field";
-@import "active_admin_pro/components/select_field";
-@import "active_admin_pro/components/summernote_field";
-
-// Layout styles shared between all sizes
-@import "active_admin_pro/layout/body";
-@import "active_admin_pro/layout/filters";
-@import "active_admin_pro/layout/flashes";
-@import "active_admin_pro/layout/footer";
-
-// Action specific layout styles
-@import "active_admin_pro/layout/actions/comments";
-@import "active_admin_pro/layout/actions/index";
-@import "active_admin_pro/layout/actions/show";
-
-// Desktop specific layout styles
-@import "active_admin_pro/layout/desktop/actions/comments";
-@import "active_admin_pro/layout/desktop/action_items";
-@import "active_admin_pro/layout/desktop/active_admin_content";
-@import "active_admin_pro/layout/desktop/breadcrumbs";
-@import "active_admin_pro/layout/desktop/navigation";
-@import "active_admin_pro/layout/desktop/sidebar";
-@import "active_admin_pro/layout/desktop/title_bar";
-@import "active_admin_pro/layout/desktop/wrapper";
-
-// Tablet specific layout styles
-@import "active_admin_pro/layout/tablet/actions/dashboard";
-@import "active_admin_pro/layout/tablet/actions/index";
-@import "active_admin_pro/layout/tablet/actions/show";
-@import "active_admin_pro/layout/tablet/active_admin_content";
-@import "active_admin_pro/layout/tablet/flashes";
-@import "active_admin_pro/layout/tablet/navigation";
-@import "active_admin_pro/layout/tablet/title_bar";
-
-// Mobile specific layout styles
-@import "active_admin_pro/layout/mobile/actions/index";
+// Layout Styles
+@import "active_admin_pro/layout/**/*";

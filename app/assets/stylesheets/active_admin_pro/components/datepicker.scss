@@ -1,0 +1,106 @@
+$datepicker-background-color: $white;
+$datepicker-cell-background-color-active: $accent-color;
+$datepicker-cell-background-color-hover: color($accent-color, 50);
+$datepicker-cell-background-color-today: color($blue-grey, 50);
+$datepicker-cell-border-color: color($blue-grey, 100);
+$datepicker-cell-color-active: text-color($datepicker-cell-background-color-active);
+$datepicker-cell-color-hover: color($accent-color, 600);
+$datepicker-cell-color-today: color($blue-grey, 700);
+$datepicker-title-color: color($blue-grey, 700);
+
+.ui-datepicker {
+  background-color: $datepicker-background-color;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  padding: 0;
+}
+
+.ui-datepicker-header {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  cursor: pointer;
+  font-size: 1.2em;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+}
+
+.ui-datepicker-prev {
+  left: 0;
+
+  &:before {
+    content: "\f0a8";
+    display: inline-block;
+    font-family: "FontAwesome";
+    padding: 0.8em 1.5em 1em;
+    visibility: visible;
+  }
+}
+
+.ui-datepicker-next {
+  right: 0;
+
+  &:after {
+    content: "\f0a9";
+    display: inline-block;
+    font-family: "FontAwesome";
+    padding: 0.8em 1.5em 1em;
+    visibility: visible;
+  }
+}
+
+.ui-datepicker-title {
+  color: $datepicker-title-color;
+  font-weight: bold;
+  padding: 0.9em 0 0.6em;
+  text-align: center;
+}
+
+.ui-datepicker-calendar {
+  margin-bottom: 0;
+
+  th {
+    padding: 0.5em 0.5em 0.25em;
+    text-align: center;
+  }
+
+  tbody tr {
+    border-bottom: 0;
+  }
+
+  td {
+    border: 1px solid $datepicker-cell-border-color;
+    padding: 0;
+    text-align: right;
+
+    &.ui-state-disabled {
+      border: 0;
+    }
+  }
+
+  a {
+    color: $accent-color;
+    display: block;
+    padding: 0.4em 0.6em 0.5em;
+    text-decoration: none;
+  }
+
+  .ui-datepicker-today a {
+    background-color: $datepicker-cell-background-color-today;
+    color: $datepicker-cell-color-today;
+  }
+
+  a.ui-state-hover {
+    background-color: $datepicker-cell-background-color-hover;
+    color: $datepicker-cell-color-hover;
+  }
+
+  a.ui-state-active {
+    background-color: $datepicker-cell-background-color-active;
+    color: $datepicker-cell-color-active;
+  }
+}

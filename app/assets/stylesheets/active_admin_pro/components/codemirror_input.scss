@@ -1,0 +1,53 @@
+@import "codemirror";
+@import "codemirror/themes/activeadmin_pro";
+@import "codemirror/themes/base16-dark";
+@import "codemirror/themes/base16-light";
+@import "codemirror/themes/dracula";
+@import "codemirror/themes/monokai";
+@import "codemirror/themes/solarized";
+@import "codemirror/themes/vibrant-ink";
+
+$codemirror-border-color: #f1f1f1;
+$codemirror-border-color-active: #e7e7e7;
+
+.input.codemirror {
+  margin-bottom: 2em;
+  position: relative;
+
+  label {
+    color: $label-font-color;
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    width: 100%;
+
+    abbr {
+      @include transition(opacity 50ms $transition-timing);
+      border-bottom: 0;
+      color: $input-required-color;
+      margin-left: 2px;
+      opacity: 0.5;
+    }
+  }
+
+  .inline-errors {
+    border-top: 1px solid $error-color;
+    color: $error-color;
+    display: block;
+    margin-top: 0;
+    padding-top: 3px;
+  }
+
+  &.focused {
+    label {
+      color: $label-font-color-focused;
+      font-weight: 500;
+
+      abbr {
+        opacity: 0.8;
+      }
+    }
+  }
+}
