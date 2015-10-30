@@ -1,11 +1,12 @@
 $datepicker-background-color: $white;
+$datepicker-cell-background-color: rgba(color($blue-grey, 50), 0.4);
 $datepicker-cell-background-color-active: $accent-color;
 $datepicker-cell-background-color-hover: color($accent-color, 50);
-$datepicker-cell-background-color-today: color($blue-grey, 50);
-$datepicker-cell-border-color: color($blue-grey, 100);
+$datepicker-cell-background-color-today: color($blue-grey, 100);
+$datepicker-cell-color: color($blue-grey, 700);
 $datepicker-cell-color-active: text-color($datepicker-cell-background-color-active);
-$datepicker-cell-color-hover: color($accent-color, 600);
-$datepicker-cell-color-today: color($blue-grey, 700);
+$datepicker-cell-color-hover: color($accent-color, 700);
+$datepicker-cell-color-today: color($blue-grey, 800);
 $datepicker-title-color: color($blue-grey, 700);
 
 .ui-datepicker {
@@ -73,7 +74,6 @@ $datepicker-title-color: color($blue-grey, 700);
   }
 
   td {
-    border: 1px solid $datepicker-cell-border-color;
     padding: 0;
     text-align: right;
 
@@ -83,9 +83,11 @@ $datepicker-title-color: color($blue-grey, 700);
   }
 
   a {
-    color: $accent-color;
+    background-color: $datepicker-cell-background-color;
+    color: $datepicker-cell-color;
     display: block;
-    padding: 0.4em 0.6em 0.5em;
+    margin: 1px;
+    padding: 0.45em 0.5em 0.5em 0.55em;
     text-decoration: none;
   }
 
