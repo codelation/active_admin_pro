@@ -13,7 +13,7 @@ ActiveAdmin.register AdminUser do
   end
 
   form do |f|
-    inputs "Admin User Details" do
+    inputs "#{t('activerecord.models.admin_user', count: 1)} Details" do
       input :name
       input :email
       input :password if f.object.new_record?

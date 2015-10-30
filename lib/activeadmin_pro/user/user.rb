@@ -13,8 +13,8 @@ ActiveAdmin.register User do
   end
 
   form do |f|
-    inputs "Details" do
-      input :name, as: :codemirror, codemirror: { line_numbers: true, mode: :gfm }
+    inputs "#{t('activerecord.models.user', count: 1)} Details" do
+      input :name
       input :email
       input :password if f.object.new_record?
     end

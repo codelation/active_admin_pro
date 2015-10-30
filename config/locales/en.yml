@@ -42,6 +42,13 @@ en:
         name: Full Name
         sign_in_count: Number of Sessions
         updated_at: Updated
+    models:
+      admin_user:
+        one: Admin User
+        other: Admin Users
+      user:
+        one: User
+        other: Users
 
   time:
     formats:

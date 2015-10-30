@@ -152,6 +152,25 @@ $summernote-toolbar-background-color: #f7f7f7;
       position: relative;
     }
   }
+
+  // Required for proper scrolling
+  .CodeMirror-scroll {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    pre {
+      word-wrap: normal;
+    }
+  }
+
+  // Hide double scrollbars (OS X problem only??)
+  // TODO: Figure out whether this is ok on other platforms
+  .CodeMirror-hscrollbar,
+  .CodeMirror-vscrollbar {
+    display: none !important;
+  }
 }
 
 .modal-backdrop.in {

@@ -1,6 +1,7 @@
 $panel-heading-color: color($blue-grey, 700);
 
-form,
+body.index form,
+fieldset.inputs,
 .paginated_collection,
 .panel {
   background-color: $white;
@@ -26,6 +27,30 @@ form,
     margin: -0.5em 0 1em;
     padding: 0;
     text-transform: uppercase;
+  }
+}
+
+fieldset.inputs {
+  border: 0;
+  display: block;
+  padding-top: 4em;
+
+  legend {
+    color: $fieldset-legend-color;
+    display: block;
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 0 0 -0.5em;
+    padding: 0;
+    position: relative;
+    text-transform: uppercase;
+    top: 2em;
+  }
+
+  ol {
+    list-style-type: none;
+    margin-top: 0;
+    padding: 0;
   }
 }
 

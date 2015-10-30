@@ -26,7 +26,8 @@ App.ready(function() {
     var summernoteInput = wrapper.find('textarea').summernote({
       codemirror: {
         lineNumbers: true,
-        mode:        'htmlmixed'
+        mode:        'htmlmixed',
+        theme:       'activeadmin_pro'
       },
       height:     200,
       minHeight:  180,

@@ -1,11 +1,11 @@
-// Pretty good Code Mirror theme that matches the Google Material Design colors
+// Pretty good CodeMirror theme that matches the Google Material Design colors
 .cm-s-activeadmin_pro.CodeMirror {
   background: color($blue-grey, 50);
   color: color($grey, 800);
 }
 
 .cm-s-activeadmin_pro div.CodeMirror-selected {
-  background: color($accent-color, 50);
+  background: color($blue-grey, 100);
 }
 
 .cm-s-activeadmin_pro .CodeMirror-line::selection,
@@ -47,20 +47,23 @@
 }
 
 .cm-s-activeadmin_pro span.cm-atom {
-  color: $purple;
+  color: $deep-purple;
 }
 
 .cm-s-activeadmin_pro span.cm-number {
-  color: color($cyan, 6000);
+  color: color($cyan, 700);
 }
 
-.cm-s-activeadmin_pro span.cm-property,
+.cm-s-activeadmin_pro span.cm-property {
+  color: color($amber, 700);
+}
+
 .cm-s-activeadmin_pro span.cm-attribute {
-  color: $purple;
+  color: $deep-purple;
 }
 
 .cm-s-activeadmin_pro span.cm-keyword {
-  color: color($pink, 500);
+  color: $pink;
 }
 
 .cm-s-activeadmin_pro span.cm-string {
@@ -88,7 +91,7 @@
 }
 
 .cm-s-activeadmin_pro span.cm-tag {
-  color: $purple;
+  color: $deep-purple;
 }
 
 .cm-s-activeadmin_pro span.cm-header {
@@ -109,6 +112,6 @@
 }
 
 .cm-s-activeadmin_pro .CodeMirror-matchingbracket {
-  background: color($accent-color, 100);
+  background: color($blue-grey, 100);
   color: $black !important;
 }
