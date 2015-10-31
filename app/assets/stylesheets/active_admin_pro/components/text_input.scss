@@ -14,7 +14,6 @@
     color: $input-placeholder-color;
     cursor: pointer;
     display: block;
-    font-weight: 300;
     padding-top: 1em;
     position: absolute;
     width: 100%;
@@ -42,14 +41,6 @@
     position: relative;
     width: 100%;
     z-index: 1;
-  }
-
-  .inline-errors {
-    color: $error-color;
-    left: 0;
-    margin: 3px 0 0;
-    position: absolute;
-    top: 100%;
   }
 
   &.error {

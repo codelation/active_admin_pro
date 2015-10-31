@@ -1,0 +1,13 @@
+.input.boolean {
+  margin-bottom: 2em;
+
+  label {
+    color: $label-font-color;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  input {
+    margin-right: 0.5em;
+  }
+}

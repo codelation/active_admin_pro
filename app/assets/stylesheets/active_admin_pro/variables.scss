@@ -4,7 +4,7 @@ $accent-color: $blue !default;
 
 $base-background-color: color($primary-color, 50) !default;
 $base-font-color:       color($grey, 800) !default;
-$base-font-family:      "San Francisco", "Helvetica Neue", Segoe UI, "Lucida Grande", Arial, sans-serif !default;
+$base-font-family:      system, -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", Segoe UI, "Lucida Grande", Arial, sans-serif;
 $base-font-size:        13px !default;
 $navigation-width:      170px !default;
 $transition-timing:     cubic-bezier(0.25, 0.8, 0.25, 1) !default;

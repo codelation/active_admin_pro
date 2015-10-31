@@ -5,5 +5,5 @@ $input-border-color: $grey;
 $input-border-color-focused: $accent-color;
 $input-font-color: $grey;
 $input-font-color-focused: color($grey, 800);
-$input-placeholder-color: color($grey, 400);
+$input-placeholder-color: $grey;
 $input-required-color: color($accent-color, 400);

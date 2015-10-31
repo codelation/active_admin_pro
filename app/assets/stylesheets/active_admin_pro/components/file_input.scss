@@ -1,0 +1,27 @@
+.input.file {
+  margin-bottom: 2em;
+  position: relative;
+
+  label {
+    color: $label-font-color;
+    cursor: pointer;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+
+    abbr {
+      border-bottom: 0;
+      color: $input-required-color;
+      margin-left: 2px;
+      opacity: 0.8;
+    }
+  }
+
+  input {
+    margin-right: 0.5em;
+  }
+
+  .inline-errors {
+    font-weight: 300;
+  }
+}
