@@ -29,10 +29,10 @@ App.ready(function() {
         mode:        'htmlmixed',
         theme:       'activeadmin_pro'
       },
-      height:     200,
-      minHeight:  180,
-      tabsize:    2,
-      toolbar:    toolbar,
+      height:    200,
+      minHeight: 180,
+      tabsize:   2,
+      toolbar:   toolbar,
 
       onBlur: function(e) {
         wrapper.removeClass('focused');
@@ -40,6 +40,26 @@ App.ready(function() {
 
       onFocus: function(e) {
         wrapper.addClass('focused');
+      },
+
+      onImageUpload: function(files) {
+        var data = new FormData();
+        data.append("file", files[0]);
+
+        $.ajax({
+          data:        data,
+          type:        "POST",
+          url:         "/activeadmin_pro/summernote_images",
+          cache:       false,
+          contentType: false,
+          processData: false,
+
+          success: function(url) {
+            var imageNode = document.createElement('img');
+            imageNode.src = url;
+            summernoteInput.summernote('insertNode', imageNode);
+          }
+        });
       }
     });
 

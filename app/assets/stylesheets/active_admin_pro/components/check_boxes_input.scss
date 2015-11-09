@@ -1,0 +1,33 @@
+.input.check_boxes {
+  margin-bottom: 2em;
+
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  legend {
+    margin-bottom: 0.5em;
+
+    label {
+      color: $label-font-color;
+      font-weight: 500;
+    }
+
+    abbr {
+      border-bottom: 0;
+      color: $input-required-color;
+      margin-left: 2px;
+      opacity: 0.8;
+    }
+  }
+
+  .choice label {
+    cursor: pointer;
+  }
+
+  input {
+    margin-right: 0.5em;
+  }
+}
