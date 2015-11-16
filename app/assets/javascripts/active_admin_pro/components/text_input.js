@@ -4,9 +4,9 @@
 App.ready(function() {
   "use strict";
 
-  $('.input.stringish').each(function() {
+  $('.input.stringish, .input.text').each(function() {
     var container = $(this);
-    var input = container.find('input');
+    var input = container.find('input, textarea');
     var label = container.find('label');
 
     // Set the container's class when the input field receives focus.

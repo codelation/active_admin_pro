@@ -1,23 +1,15 @@
-// Google Material Design inspired string input with floating label
-.input.stringish {
-  @include transform(translate3d(0, 0, 0));
-  @include transition(all 100ms $transition-timing);
-  border-bottom: 1px solid transparent;
+.input.text {
   margin-bottom: 2em;
-  padding-top: 2em;
   position: relative;
 
   label {
-    @include transform(scale(1.2) translateY(-$base-font-size));
-    @include transform-origin(0 0);
-    @include transition(font-size 180ms $transition-timing, transform 180ms $transition-timing);
-    color: $input-placeholder-color;
+    color: $label-font-color;
     cursor: pointer;
     display: block;
-    padding-top: 1em;
-    position: absolute;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
     width: 100%;
-    z-index: 2;
 
     abbr {
       @include transition(opacity 50ms $transition-timing);
@@ -28,58 +20,36 @@
     }
   }
 
-  input {
-    @include transition(all 100ms $transition-timing);
-    background: none;
-    border: 0;
-    border-bottom: 1px solid $input-border-color;
-    border-radius: 0;
-    color: $input-font-color;
-    font-size: 1.2em;
+  .inline-errors {
+    color: $error-color;
+    left: 0;
+    margin: 3px 0 0;
+    position: absolute;
+    top: 100%;
+  }
+
+  textarea {
+    border: 1px solid $grey;
+    border-radius: 2px;
+    display: block;
+    height: 160px;
     outline: none;
-    padding: 0 0 6px;
-    position: relative;
+    padding: 0.5em;
     width: 100%;
-    z-index: 1;
   }
 
-  &.error {
-    input {
-      border-bottom: 1px solid $error-color;
-    }
-  }
-
-  &.focused,
-  &.has-value {
+  &.focused {
     label {
-      @include transform(scale(1) translateY(-2.8 * $base-font-size));
-      color: $label-font-color;
+      color: $label-font-color-focused;
       font-weight: 500;
 
       abbr {
         opacity: 0.8;
       }
     }
-  }
 
-  &.focused {
-    border-bottom: 1px solid $input-border-color-focused;
-
-    label {
-      color: $label-font-color-focused;
-    }
-
-    input {
-      border-bottom: 1px solid $input-border-color-focused;
-      color: $input-font-color-focused;
-    }
-
-    &.error {
-      border-bottom: 1px solid $error-color;
-
-      input {
-        border-bottom: 1px solid $error-color;
-      }
+    textarea {
+      border: 2px solid $accent-color;
     }
   }
 }
