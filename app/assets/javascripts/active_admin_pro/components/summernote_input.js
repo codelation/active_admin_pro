@@ -49,7 +49,7 @@ App.ready(function() {
         $.ajax({
           data:        data,
           type:        "POST",
-          url:         "/activeadmin_pro/summernote_images",
+          url:         "/admin/activeadmin_pro_summernote_images",
           cache:       false,
           contentType: false,
           processData: false,

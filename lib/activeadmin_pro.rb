@@ -1,5 +1,5 @@
 require "activeadmin"
-require "aws-sdk"
+require "fog"
 require "turbolinks"
 require "activeadmin_pro/engine"
 require "activeadmin_pro/version"

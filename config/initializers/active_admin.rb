@@ -44,4 +44,7 @@ ActiveAdmin.application.tap do |config|
   if user_exists && !user_registration_exists
     config.load_paths.unshift File.join(File.expand_path("../../..", __FILE__), "lib", "activeadmin_pro", "user")
   end
+
+  # Add route and controller for Summernote's image uploads
+  config.load_paths.unshift File.join(File.expand_path("../../..", __FILE__), "lib", "activeadmin_pro", "summernote_image")
 end
