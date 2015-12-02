@@ -21,50 +21,60 @@ App.ready(function() {
     ['code', ['codeview', 'fullscreen']]
   ];
 
-  $('.input.summernote').each(function() {
-    var wrapper = $(this);
-    var summernoteInput = wrapper.find('textarea').summernote({
-      codemirror: {
-        lineNumbers: true,
-        mode:        'htmlmixed',
-        theme:       'activeadmin_pro'
-      },
-      height:    200,
-      minHeight: 180,
-      tabsize:   2,
-      toolbar:   toolbar,
+  function activateBehavior() {
+    $('.input.summernote').each(function() {
+      var wrapper = $(this);
+      var summernoteInput = wrapper.find('textarea').summernote({
+        codemirror: {
+          lineNumbers: true,
+          mode:        'htmlmixed',
+          theme:       'activeadmin_pro'
+        },
+        height:    200,
+        minHeight: 180,
+        tabsize:   2,
+        toolbar:   toolbar,
 
-      onBlur: function(e) {
-        wrapper.removeClass('focused');
-      },
+        onBlur: function(e) {
+          wrapper.removeClass('focused');
+        },
 
-      onFocus: function(e) {
-        wrapper.addClass('focused');
-      },
+        onFocus: function(e) {
+          wrapper.addClass('focused');
+        },
 
-      onImageUpload: function(files) {
-        var data = new FormData();
-        data.append("file", files[0]);
+        onImageUpload: function(files) {
+          var data = new FormData();
+          data.append("file", files[0]);
 
-        $.ajax({
-          data:        data,
-          type:        "POST",
-          url:         "/admin/activeadmin_pro_summernote_images",
-          cache:       false,
-          contentType: false,
-          processData: false,
+          $.ajax({
+            data:        data,
+            type:        "POST",
+            url:         "/admin/activeadmin_pro_summernote_images",
+            cache:       false,
+            contentType: false,
+            processData: false,
 
-          success: function(url) {
-            var imageNode = document.createElement('img');
-            imageNode.src = url;
-            summernoteInput.summernote('insertNode', imageNode);
-          }
-        });
-      }
+            success: function(url) {
+              var imageNode = document.createElement('img');
+              imageNode.src = url;
+              summernoteInput.summernote('insertNode', imageNode);
+            }
+          });
+        }
+      });
+
+      wrapper.find('label').click(function() {
+        summernoteInput.summernote('focus');
+      });
     });
+  }
 
-    wrapper.find('label').click(function() {
-      summernoteInput.summernote('focus');
-    });
+  $('.has_many_add').click(function() {
+    setTimeout(function() {
+      activateBehavior();
+    }, 0);
   });
+
+  activateBehavior();
 });

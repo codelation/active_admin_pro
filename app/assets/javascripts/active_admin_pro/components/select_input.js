@@ -2,7 +2,7 @@
 App.ready(function() {
   "use strict";
 
-  function activateSelectBehavior(selector) {
+  function activateBehavior(selector) {
     $(selector).each(function() {
       var container = $(this);
       var input = container.find('select');
@@ -21,11 +21,11 @@ App.ready(function() {
 
   $('.has_many_add').click(function() {
     setTimeout(function() {
-      activateSelectBehavior('.has_many_fields:last .input.country');
-      activateSelectBehavior('.has_many_fields:last .input.select');
+      activateBehavior('.has_many_fields:last .input.country');
+      activateBehavior('.has_many_fields:last .input.select');
     }, 0);
   });
 
-  activateSelectBehavior('.input.country');
-  activateSelectBehavior('.input.select');
+  activateBehavior('.input.country');
+  activateBehavior('.input.select');
 });

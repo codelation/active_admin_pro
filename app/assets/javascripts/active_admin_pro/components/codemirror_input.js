@@ -37,32 +37,42 @@
 App.ready(function() {
   "use strict";
 
-  $('.input.codemirror').each(function() {
-    var wrapper = $(this);
-    var textarea = wrapper.find('textarea');
-    var codemirrorOptions = textarea.data('codemirror');
+  function activateBehavior() {
+    $('.input.codemirror').each(function() {
+      var wrapper = $(this);
+      var textarea = wrapper.find('textarea');
+      var codemirrorOptions = textarea.data('codemirror');
 
-    // By default, use spaces instead of tabs
-    if (typeof(codemirrorOptions.extraKeys.Tab) !== 'function') {
-      codemirrorOptions.extraKeys.Tab = function(cm) {
-        var spaces = new Array(cm.getOption('indentUnit') + 1).join(' ');
-        cm.replaceSelection(spaces);
-      };
-    }
+      // By default, use spaces instead of tabs
+      if (typeof(codemirrorOptions.extraKeys.Tab) !== 'function') {
+        codemirrorOptions.extraKeys.Tab = function(cm) {
+          var spaces = new Array(cm.getOption('indentUnit') + 1).join(' ');
+          cm.replaceSelection(spaces);
+        };
+      }
 
-    // Initialize the Code Mirror editor with the given options
-    var codemirrorInput = CodeMirror.fromTextArea(textarea[0], codemirrorOptions);
+      // Initialize the Code Mirror editor with the given options
+      var codemirrorInput = CodeMirror.fromTextArea(textarea[0], codemirrorOptions);
 
-    wrapper.find('label').click(function() {
-      codemirrorInput.focus();
+      wrapper.find('label').click(function() {
+        codemirrorInput.focus();
+      });
+
+      codemirrorInput.on('focus', function() {
+        wrapper.addClass('focused');
+      });
+
+      codemirrorInput.on('blur', function() {
+        wrapper.removeClass('focused');
+      });
     });
+  }
 
-    codemirrorInput.on('focus', function() {
-      wrapper.addClass('focused');
-    });
-
-    codemirrorInput.on('blur', function() {
-      wrapper.removeClass('focused');
-    });
+  $('.has_many_add').click(function() {
+    setTimeout(function() {
+      activateBehavior();
+    }, 0);
   });
+
+  activateBehavior();
 });

@@ -4,34 +4,44 @@
 App.ready(function() {
   "use strict";
 
-  $('.input.stringish, .input.text').each(function() {
-    var container = $(this);
-    var input = container.find('input, textarea');
-    var label = container.find('label');
+  function activateBehavior() {
+    $('.input.stringish, .input.text').each(function() {
+      var container = $(this);
+      var input = container.find('input, textarea');
+      var label = container.find('label');
 
-    // Set the container's class when the input field receives focus.
-    input.focus(function() {
-      container.addClass('focused');
-    });
+      // Set the container's class when the input field receives focus.
+      input.focus(function() {
+        container.addClass('focused');
+      });
 
-    // Set the container class based on whether or not the
-    // input field has a value and remove the focused class.
-    function setContainerCssClass() {
-      if (input.val().trim() === '') {
-        container.removeClass('has-value');
-        container.addClass('blank');
-      } else {
-        container.removeClass('blank');
-        container.addClass('has-value');
+      // Set the container class based on whether or not the
+      // input field has a value and remove the focused class.
+      function setContainerCssClass() {
+        if (input.val().trim() === '') {
+          container.removeClass('has-value');
+          container.addClass('blank');
+        } else {
+          container.removeClass('blank');
+          container.addClass('has-value');
+        }
       }
-    }
 
-    input.blur(function() {
+      input.blur(function() {
+        setContainerCssClass();
+        container.removeClass('focused');
+      });
+
       setContainerCssClass();
-      container.removeClass('focused');
+      container.addClass('animate');
     });
+  }
 
-    setContainerCssClass();
-    container.addClass('animate');
+  $('.has_many_add').click(function() {
+    setTimeout(function() {
+      activateBehavior();
+    }, 0);
   });
+
+  activateBehavior();
 });
