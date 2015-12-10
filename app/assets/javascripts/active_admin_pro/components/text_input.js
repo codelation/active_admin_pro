@@ -5,7 +5,7 @@ App.ready(function() {
   "use strict";
 
   function activateBehavior() {
-    $('.input.stringish, .input.text').each(function() {
+    $('.input.stringish:not(.phone), .input.text').each(function() {
       var container = $(this);
       var input = container.find('input, textarea');
       var label = container.find('label');

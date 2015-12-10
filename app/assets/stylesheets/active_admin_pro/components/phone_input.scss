@@ -1,5 +1,31 @@
-.input.phone input {
-  @include placeholder {
-    color: transparent;
+@import "intl-tel-input";
+
+.input.phone {
+  position: relative;
+  z-index: 2;
+
+  .intl-tel-input {
+    width: 100%;
+
+    input {
+      padding-left: 44px;
+
+      @include placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  .flag-dropdown {
+    padding: 0;
+    top: -7px;
+  }
+
+  &.blank .flag-dropdown {
+    opacity: 0;
+  }
+
+  &.focused .flag-dropdown {
+    opacity: 1;
   }
 }
