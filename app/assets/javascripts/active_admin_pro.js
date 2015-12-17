@@ -1,3 +1,4 @@
+/* globals Turbolinks */
 //= require active_admin/base
 //= require turbolinks
 //= require_self
@@ -6,6 +7,7 @@
 // The app is fully ready for enabling transition cache,
 // but I can't quite prevent all elements from flashing on load.
 // Turbolinks.enableTransitionCache();
+Turbolinks.enableProgressBar();
 
 // I was struggling to get everything to fire off every page load,
 // but only once per page load, so I came up with crap.

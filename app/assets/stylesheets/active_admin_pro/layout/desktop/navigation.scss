@@ -86,6 +86,12 @@ $user-links-font-color:                   text-color($primary-color);
         background-color: $navigation-link-background-color-hover;
         color: $navigation-link-color-hover;
       }
+
+      &.active {
+        background-color: $navigation-link-background-color-hover;
+        color: $navigation-link-color-hover;
+        cursor: wait;
+      }
     }
 
     li.current a {
