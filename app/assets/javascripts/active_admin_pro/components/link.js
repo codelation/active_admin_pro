@@ -13,4 +13,11 @@ App.ready(function() {
   // Remove loading and active classes on page load
   body.removeClass('loading');
   links.removeClass('active');
+
+  // We also need to make sure to remove the loading classes when the
+  // page is restored by Turbolinks when using the back button
+  document.addEventListener('page:restore', function() {
+    body.removeClass('loading');
+    links.removeClass('active');
+  });
 });
