@@ -9,6 +9,7 @@ class CodemirrorInput < Formtastic::Inputs::TextInput
 
     # Set any default options for addons if they aren't already set
     codemirror_options[:autoCloseBrackets] = true unless codemirror_options[:autoCloseBrackets] == false
+    codemirror_options[:lineNumbers] = true       unless codemirror_options[:lineNumbers] == false
     codemirror_options[:matchBrackets] = true     unless codemirror_options[:matchBrackets] == false
     codemirror_options[:matchTags] = true         unless codemirror_options[:matchTags] == false
 
