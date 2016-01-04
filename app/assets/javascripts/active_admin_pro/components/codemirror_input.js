@@ -31,14 +31,20 @@
 //= require codemirror/modes/shell
 //= require codemirror/modes/xml
 //= require codemirror/modes/yaml
+/* globals CodeMirror */
 
 // CodeMirror editor field.
 // @see https://codemirror.net
 App.ready(function() {
   "use strict";
 
+  var codemirrorInputs, windowElement;
+
   function activateBehavior() {
-    $('.input.codemirror').each(function() {
+    codemirrorInputs = $('.input.codemirror');
+    windowElement = $(window);
+
+    codemirrorInputs.each(function() {
       var wrapper = $(this);
       var textarea = wrapper.find('textarea');
       var codemirrorOptions = textarea.data('codemirror');
@@ -65,6 +71,20 @@ App.ready(function() {
       codemirrorInput.on('blur', function() {
         wrapper.removeClass('focused');
       });
+    });
+
+    resizeCodemirrorInputs();
+    windowElement.resize(resizeCodemirrorInputs);
+  }
+
+  // Code Mirror works best when there is a fixed width on its container, so
+  // let's detect the size the container is without the input and set the width.
+  function resizeCodemirrorInputs() {
+    codemirrorInputs.each(function() {
+      var wrapper = $(this);
+      wrapper.hide();
+      wrapper.css('width', wrapper.parent().innerWidth() + 'px');
+      wrapper.show();
     });
   }
 
