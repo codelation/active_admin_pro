@@ -70,11 +70,5 @@ App.ready(function() {
     });
   }
 
-  $('.has_many_add').click(function() {
-    setTimeout(function() {
-      activateBehavior();
-    }, 0);
-  });
-
   activateBehavior();
 });

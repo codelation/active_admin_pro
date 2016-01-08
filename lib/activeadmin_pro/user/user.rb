@@ -36,18 +36,18 @@ ActiveAdmin.register User do
     active_admin_comments
   end
 
-  member_action :sign_in_as, method: :get do
+  member_action :become, method: :post do
     sign_in(resource, bypass: true)
     redirect_to "/"
   end
 
   action_item :become_user, only: :show do
-    # The path `sign_in_as_admin_user_path` is confusing as
+    # The path `become_admin_user_path` is confusing as
     # hell because we're not signing in as an admin user.
     # Here's what's up:
-    #   The member action is: `sign_in_as`
+    #   The member action is: `become`
     #   The namespace is:     `admin`
     #   The controller is:    `user`
-    link_to("Become User", sign_in_as_admin_user_path(user))
+    link_to("Become User", become_admin_user_path(user), method: :post)
   end
 end
