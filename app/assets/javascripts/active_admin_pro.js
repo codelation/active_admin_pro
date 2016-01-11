@@ -1,5 +1,6 @@
 /* globals Turbolinks */
 //= require active_admin/base
+//= require activeadmin-sortable
 //= require turbolinks
 //= require_self
 //= require_tree ./active_admin_pro

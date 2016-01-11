@@ -1,0 +1,21 @@
+$sortable-handle-color: color($grey, 400) !default;
+
+body.index .handle {
+  color: transparent;
+  cursor: move;
+  display: block;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+
+  &:before {
+    border-radius: 2px;
+    color: $sortable-handle-color;
+    content: "\f142 \f142";
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 1px;
+  }
+}
