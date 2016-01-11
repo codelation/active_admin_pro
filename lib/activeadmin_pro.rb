@@ -1,4 +1,5 @@
 require "activeadmin"
+require "activeadmin-sortable"
 require "fog"
 require "turbolinks"
 require "activeadmin_pro/engine"
