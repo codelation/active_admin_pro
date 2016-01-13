@@ -10,7 +10,11 @@ ActiveAdmin.register ActiveadminPro::SummernoteImage do
       elsif ENV["GOOGLE_STORAGE_BUCKET"]
         @bucket = google_storage_bucket
       end
-      render text: upload_file
+      if @bucket
+        render text: upload_file
+      else
+        render json: { error: "No AWS or Google cloud storage bucket setup.  Please set the AWS_BUCKET or GOOGLE_STORAGE_BUCKET." }, status: :unprocessable_entity
+      end
     end
 
   private
