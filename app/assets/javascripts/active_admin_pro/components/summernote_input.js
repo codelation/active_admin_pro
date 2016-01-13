@@ -59,6 +59,11 @@ App.ready(function() {
               var imageNode = document.createElement('img');
               imageNode.src = url;
               summernoteInput.summernote('insertNode', imageNode);
+            },
+            error: function(err) {
+              var json_err = jQuery.parseJSON(err.responseText)
+              $("#wrapper").prepend('<div class="flashes animate"><div class="flash flash_notice">' + json_err.error + '</div></div>');
+              $(".note-editor .modal-dialog .note-image-input").val('');
             }
           });
         }
