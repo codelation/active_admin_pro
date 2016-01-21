@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "A collection of styles and scripts that make Active Admin better."
   s.licenses    = ["MIT"]
 
-  s.files = Dir["{app,config,db,lib,vendor}/**/*", "LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,lib,vendor}/**/*", "LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "activeadmin"

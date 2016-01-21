@@ -169,6 +169,22 @@ $summernote-toolbar-background-color: #f7f7f7;
   }
 }
 
+#summernote_image_dialog {
+  .input.text {
+    margin-bottom: 1em;
+  }
+
+  input[type="text"] {
+    border: 1px solid color($grey, 300);
+    border-radius: 2px;
+    width: 100%;
+
+    &:focus {
+      border-color: $grey;
+    }
+  }
+}
+
 .modal-backdrop.in {
   display: none;
 }
