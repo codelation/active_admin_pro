@@ -16,19 +16,29 @@
   left: 50% !important;
   margin-left: -160px;
   outline: none;
-  padding: 2em 2em 1em;
   position: fixed !important;
   top: 20% !important;
   width: 320px !important;
   z-index: 1002;
 
   .ui-dialog-title {
+    background-color: color($blue-grey, 50);
+    color: $label-font-color;
     display: block;
-    margin-bottom: 2em;
+    font-weight: bold;
+    padding: 1em 2em;
   }
 
   .ui-dialog-titlebar-close {
     display: none;
+  }
+
+  .ui-dialog-content {
+    padding: 1em 2em 0;
+  }
+
+  .ui-dialog-buttonset {
+    padding: 1em 2em;
   }
 
   #dialog_confirm {
