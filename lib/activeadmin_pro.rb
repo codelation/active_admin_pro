@@ -2,8 +2,8 @@ require "activeadmin"
 require "activeadmin-sortable"
 require "fog"
 require "turbolinks"
-require "activeadmin_pro/engine"
-require "activeadmin_pro/version"
+require "active_admin_pro/engine"
+require "active_admin_pro/version"
 
 module ActiveAdminPro
 end
