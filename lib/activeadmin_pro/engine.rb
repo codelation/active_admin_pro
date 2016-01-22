@@ -1,4 +1,4 @@
-module ActiveadminPro
+module ActiveAdminPro
   class Engine < ::Rails::Engine
     # Load Rails Generators
     generators do

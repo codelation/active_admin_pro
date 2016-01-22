@@ -5,5 +5,5 @@ require "turbolinks"
 require "activeadmin_pro/engine"
 require "activeadmin_pro/version"
 
-module ActiveadminPro
+module ActiveAdminPro
 end

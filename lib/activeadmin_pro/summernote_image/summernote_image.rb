@@ -1,4 +1,4 @@
-ActiveAdmin.register ActiveadminPro::SummernoteImage do
+ActiveAdmin.register ActiveAdminPro::SummernoteImage do
   actions :create
   menu false
 
