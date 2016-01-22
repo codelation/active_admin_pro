@@ -5,11 +5,11 @@ require "active_admin_pro/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "activeadmin_pro"
+  s.name        = "active_admin_pro"
   s.version     = ActiveAdminPro::VERSION
   s.authors     = ["Brian Pattison"]
   s.email       = ["brian@brianpattison.com"]
-  s.homepage    = "https://github.com/brianpattison/activeadmin_pro"
+  s.homepage    = "https://github.com/codelation/active_admin_pro"
   s.summary     = "Active Admin add-ons"
   s.description = "A collection of styles and scripts that make Active Admin better."
   s.licenses    = ["MIT"]
