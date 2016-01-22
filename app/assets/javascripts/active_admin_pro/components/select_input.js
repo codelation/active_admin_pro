@@ -26,6 +26,6 @@ App.ready(function() {
     }, 0);
   });
 
-  activateBehavior('.input.country');
-  activateBehavior('.input.select');
+  activateBehavior('.input.country:not(.filter_form_field)');
+  activateBehavior('.input.select:not(.filter_form_field)');
 });

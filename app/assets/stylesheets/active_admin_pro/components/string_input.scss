@@ -1,5 +1,5 @@
 // Google Material Design inspired string input with floating label
-.input.stringish {
+.input.stringish:not(.filter_form_field) {
   @include transform(translate3d(0, 0, 0));
   @include transition(all 100ms $transition-timing);
   border-bottom: 1px solid transparent;

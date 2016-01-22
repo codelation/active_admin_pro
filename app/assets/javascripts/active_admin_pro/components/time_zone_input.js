@@ -6,7 +6,7 @@ App.ready(function() {
   var offset, option, select;
 
   function activateBehavior() {
-    $('.input.time_zone select').each(function() {
+    $('.input.time_zone:not(.filter_form_field) select').each(function() {
       select = $(this);
       if (select.val().trim() === '') {
         option = select.find('.time-zone' + timeOffset());

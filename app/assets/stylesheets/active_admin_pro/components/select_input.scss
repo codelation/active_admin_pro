@@ -1,5 +1,5 @@
-.input.country,
-.input.select {
+.input.country:not(.filter_form_field),
+.input.select:not(.filter_form_field) {
   margin-bottom: 2em;
   position: relative;
 

@@ -1,4 +1,4 @@
-.input.boolean {
+.input.boolean:not(.filter_form_field) {
   margin-bottom: 2em;
 
   label {
