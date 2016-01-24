@@ -1,7 +1,7 @@
 //= require intl-tel-input
 //= require intl-tel-utils
 
-App.ready(function() {
+(function() {
   "use strict";
 
   function activateBehavior() {
@@ -42,11 +42,12 @@ App.ready(function() {
     });
   }
 
-  $('.has_many_add').click(function() {
-    setTimeout(function() {
-      activateBehavior();
-    }, 0);
+  App.register('component').enter(function() {
+    activateBehavior();
+    $('.has_many_add').click(function() {
+      setTimeout(function() {
+        activateBehavior();
+      }, 0);
+    });
   });
-
-  activateBehavior();
-});
+})();

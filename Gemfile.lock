@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    activeadmin_pro (0.0.1)
+    active_admin_pro (0.0.1)
       rails (~> 4.2.4)
 
 GEM
@@ -102,7 +102,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin_pro!
+  active_admin_pro!
   sqlite3
 
 BUNDLED WITH

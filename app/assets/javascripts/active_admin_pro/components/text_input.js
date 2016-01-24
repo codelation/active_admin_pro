@@ -1,7 +1,7 @@
 // This is a Google Material Design inspired text field.
 // The JavaScript doesn't do much. It just set the classes needed
 // by the CSS based on the input's focus and blank/filled states.
-App.ready(function() {
+(function() {
   "use strict";
 
   function activateBehavior() {
@@ -37,11 +37,12 @@ App.ready(function() {
     });
   }
 
-  $('.has_many_add').click(function() {
-    setTimeout(function() {
-      activateBehavior();
-    }, 0);
+  App.register('component').enter(function() {
+    activateBehavior();
+    $('.has_many_add').click(function() {
+      setTimeout(function() {
+        activateBehavior();
+      }, 0);
+    });
   });
-
-  activateBehavior();
-});
+})();

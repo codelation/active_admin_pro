@@ -1,5 +1,5 @@
 // Highlight the label for a select field on focus.
-App.ready(function() {
+(function() {
   "use strict";
 
   function activateBehavior(selector) {
@@ -19,13 +19,15 @@ App.ready(function() {
     });
   }
 
-  $('.has_many_add').click(function() {
-    setTimeout(function() {
-      activateBehavior('.has_many_fields:last .input.country');
-      activateBehavior('.has_many_fields:last .input.select');
-    }, 0);
-  });
+  App.register('component').enter(function() {
+    activateBehavior('.input.country:not(.filter_form_field)');
+    activateBehavior('.input.select:not(.filter_form_field)');
 
-  activateBehavior('.input.country:not(.filter_form_field)');
-  activateBehavior('.input.select:not(.filter_form_field)');
-});
+    $('.has_many_add').click(function() {
+      setTimeout(function() {
+        activateBehavior('.has_many_fields:last .input.country');
+        activateBehavior('.has_many_fields:last .input.select');
+      }, 0);
+    });
+  });
+})();

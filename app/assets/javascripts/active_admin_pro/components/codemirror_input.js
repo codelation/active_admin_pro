@@ -35,14 +35,12 @@
 
 // CodeMirror editor field.
 // @see https://codemirror.net
-App.ready(function() {
+(function() {
   "use strict";
 
-  var codemirrorInputs, windowElement;
-
-  function activateBehavior() {
-    codemirrorInputs = $('.input.codemirror');
-    windowElement = $(window);
+  App.register('component').enter(function() {
+    var codemirrorInputs = $('.input.codemirror');
+    var windowElement = $(window);
 
     codemirrorInputs.each(function() {
       var wrapper = $(this);
@@ -73,20 +71,18 @@ App.ready(function() {
       });
     });
 
+    // Code Mirror works best when there is a fixed width on its container, so
+    // let's detect the size the container is without the input and set the width.
+    function resizeCodemirrorInputs() {
+      codemirrorInputs.each(function() {
+        var wrapper = $(this);
+        wrapper.hide();
+        wrapper.css('width', wrapper.parent().innerWidth() + 'px');
+        wrapper.show();
+      });
+    }
+
     resizeCodemirrorInputs();
     windowElement.resize(resizeCodemirrorInputs);
-  }
-
-  // Code Mirror works best when there is a fixed width on its container, so
-  // let's detect the size the container is without the input and set the width.
-  function resizeCodemirrorInputs() {
-    codemirrorInputs.each(function() {
-      var wrapper = $(this);
-      wrapper.hide();
-      wrapper.css('width', wrapper.parent().innerWidth() + 'px');
-      wrapper.show();
-    });
-  }
-
-  activateBehavior();
-});
+  });
+})();

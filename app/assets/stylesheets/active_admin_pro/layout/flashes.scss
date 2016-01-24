@@ -1,7 +1,7 @@
-$alert-background-color: rgba(color($red, 700), 0.8);
-$alert-text-color: $white;
-$notice-background-color: rgba(color($accent-color, 600), 0.9);
-$notice-text-color: $white;
+$alert-background-color:  rgba($red, 0.85);
+$alert-font-color:        $white;
+$notice-background-color: rgba($green, 0.85);
+$notice-font-color:       $white;
 
 @include keyframes(flash-up) {
   0% {
@@ -21,32 +21,26 @@ $notice-text-color: $white;
   }
 }
 
-.flashes {
+.flash_alert,
+.flash_notice {
+  @include animation(flash-up 6s 1);
   @include transform(translateZ(0) translate3d(0, 100%, 0));
   bottom: 0;
   font-size: 1.6em;
-  left: $navigation-width;
+  left: 0;
+  line-height: 1.2;
+  padding: 0.6em 0.9em;
   position: fixed;
   right: 0;
   text-align: center;
-  z-index: 1000;
-
-  &.animate {
-    @include animation(flash-up 6s 1);
-  }
 }
 
-.flash_alert,
-.flash_error {
+.flash_alert {
   background-color: $alert-background-color;
-  color: $alert-text-color;
-  padding: ($base-font-size + 2px) ($base-font-size * 2);
-  text-shadow: 0 1px 1px darken($alert-background-color, 20%);
+  color: $alert-font-color;
 }
 
 .flash_notice {
   background-color: $notice-background-color;
-  color: $notice-text-color;
-  padding: ($base-font-size + 2px) ($base-font-size * 2);
-  text-shadow: 0 1px 1px darken($notice-background-color, 20%);
+  color: $notice-font-color;
 }

@@ -1,0 +1,2 @@
+/* globals Turbolinks */
+Turbolinks.enableProgressBar();

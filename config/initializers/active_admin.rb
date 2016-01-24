@@ -31,5 +31,5 @@ ActiveAdmin.application.tap do |config|
   config.meta_tags["viewport"]                     ||= "initial-scale=1, maximum-scale=1, width=device-width"
 
   # Add route and controller for Summernote's image uploads
-  config.load_paths.unshift File.join(File.expand_path("../../..", __FILE__), "lib", "activeadmin_pro", "summernote_image")
+  config.load_paths.unshift File.join(File.expand_path("../../..", __FILE__), "lib", "active_admin_pro", "summernote_image")
 end

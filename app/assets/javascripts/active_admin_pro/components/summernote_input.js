@@ -8,7 +8,7 @@
 
 // Summernote editor field.
 // @see http://summernote.org
-App.ready(function() {
+(function() {
   "use strict";
 
   var toolbar = [
@@ -28,7 +28,7 @@ App.ready(function() {
         codemirror: {
           lineNumbers: true,
           mode:        'htmlmixed',
-          theme:       'activeadmin_pro'
+          theme:       'active_admin_pro'
         },
         height:    200,
         minHeight: 180,
@@ -90,7 +90,7 @@ App.ready(function() {
                 $.ajax({
                   data:        data,
                   type:        "POST",
-                  url:         "/admin/activeadmin_pro_summernote_images",
+                  url:         "/admin/active_admin_pro_summernote_images",
                   cache:       false,
                   contentType: false,
                   processData: false,
@@ -128,5 +128,7 @@ App.ready(function() {
     });
   }
 
-  activateBehavior();
-});
+  App.register('component').enter(function() {
+    activateBehavior();
+  });
+})();

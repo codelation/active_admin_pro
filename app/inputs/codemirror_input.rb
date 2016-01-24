@@ -19,7 +19,7 @@ class CodemirrorInput < Formtastic::Inputs::TextInput
     codemirror_options[:tabSize] ||= 2
 
     # Set the default theme to the matching Active Admin Pro theme
-    codemirror_options[:theme] ||= "activeadmin_pro"
+    codemirror_options[:theme] ||= "active_admin_pro"
 
     # Pass the CodeMirror options as a data attribute to the input element
     super.merge(class: "codemirror", data: { codemirror: codemirror_options })

@@ -605,6 +605,10 @@
      * @param {Node} node
      */
     var nodeLength = function (node) {
+      if (node === undefined || node === null) {
+        return 0;
+      }
+
       if (isText(node)) {
         return node.nodeValue.length;
       }
@@ -6109,46 +6113,6 @@
     };
   };
 
-  var ImagePopover = function (context) {
-    var ui = $.summernote.ui;
-
-    var options = context.options;
-
-    this.shouldInitialize = function () {
-      return !list.isEmpty(options.popover.image);
-    };
-
-    this.initialize = function () {
-      this.$popover = ui.popover({
-        className: 'note-image-popover'
-      }).render().appendTo('body');
-      var $content = this.$popover.find('.popover-content');
-
-      context.invoke('buttons.build', $content, options.popover.image);
-    };
-
-    this.destroy = function () {
-      this.$popover.remove();
-    };
-
-    this.update = function (target) {
-      if (dom.isImg(target)) {
-        var pos = dom.posFromPlaceholder(target);
-        this.$popover.css({
-          display: 'block',
-          left: pos.left,
-          top: pos.top
-        });
-      } else {
-        this.hide();
-      }
-    };
-
-    this.hide = function () {
-      this.$popover.hide();
-    };
-  };
-
   var VideoDialog = function (context) {
     var self = this;
     var ui = $.summernote.ui;
@@ -6724,7 +6688,7 @@
         'linkDialog': LinkDialog,
         'linkPopover': LinkPopover,
         'imageDialog': ImageDialog,
-        'imagePopover': ImagePopover,
+        // 'imagePopover': ImagePopover,
         'videoDialog': VideoDialog,
         'helpDialog': HelpDialog,
         'airPopover': AirPopover

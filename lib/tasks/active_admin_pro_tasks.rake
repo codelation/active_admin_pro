@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :activeadmin_pro do
+# task :active_admin_pro do
 #   # Task goes here
 # end

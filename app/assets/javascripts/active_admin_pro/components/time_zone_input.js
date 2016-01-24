@@ -1,6 +1,6 @@
 // Creates a select input populated with time zones and automatically
 // selects the current time zone detected by the browser.
-App.ready(function() {
+(function() {
   "use strict";
 
   var offset, option, select;
@@ -41,11 +41,12 @@ App.ready(function() {
     return offset;
   }
 
-  $('.has_many_add').click(function() {
-    setTimeout(function() {
-      activateBehavior();
-    }, 0);
+  App.register('component').enter(function() {
+    activateBehavior();
+    $('.has_many_add').click(function() {
+      setTimeout(function() {
+        activateBehavior();
+      }, 0);
+    });
   });
-
-  activateBehavior();
-});
+})();
