@@ -53,7 +53,6 @@
 
       // Override the default image dialog with an Active Admin (jQuery UI) dialog
       var pictureButton = wrapper.find('button[data-original-title="Picture"]');
-      pictureButton.unbind('click');
       pictureButton.click(function(event) {
         var dialogHtml = '<div id="summernote_image_dialog">';
         dialogHtml += '<div class="input file">';

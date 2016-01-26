@@ -9,7 +9,7 @@ ActiveAdmin.application.tap do |config|
   config.localize_format = :short
 
   # Include Font Awesome in ActiveAdmin
-  config.register_stylesheet "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"
+  config.register_stylesheet "//maxcdn.bootstrapcdn.com/font-awesome/#{ENV['FONT_AWESOME_VERSION'] || '4.5.0'}/css/font-awesome.min.css"
 
   # Add Apple web application icons
   base_url = "//s3.amazonaws.com/codelation.activeadmin/apple-touch-icon"
