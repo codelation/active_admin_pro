@@ -24,7 +24,10 @@
   function activateBehavior() {
     $('.input.summernote').each(function() {
       var wrapper = $(this);
-      var summernoteInput = wrapper.find('textarea').summernote({
+      var textarea = wrapper.find('textarea');
+
+      // Default Summernote options
+      var summernoteOptions = {
         codemirror: {
           lineNumbers: true,
           mode:        'htmlmixed',
@@ -42,7 +45,13 @@
         onFocus: function(e) {
           wrapper.addClass('focused');
         }
-      });
+      };
+
+      // Merge options given by the Active Admin input option `:summernote`
+      $.extend(summernoteOptions, textarea.data('summernote-options'));
+
+      // Initialize the Summernote editor
+      var summernoteInput = textarea.summernote(summernoteOptions);
 
       wrapper.find('label').click(function() {
         summernoteInput.summernote('focus');
