@@ -25,7 +25,7 @@ ActiveAdmin.register ActiveAdminPro::SummernoteImage do
       file_ext = File.extname(@file.original_filename)
       file_base = File.basename(@file.original_filename, file_ext)
       time = Time.now.to_i
-      "aap/si/#{file_base}_#{time}#{file_ext}"
+      "aap/si/#{file_base.parameterize}-#{time}#{file_ext}"
     end
 
     def google_storage_bucket
