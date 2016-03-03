@@ -31,12 +31,52 @@
 //= require codemirror/modes/shell
 //= require codemirror/modes/xml
 //= require codemirror/modes/yaml
+
 /* globals CodeMirror */
+
+var globalEditor;
 
 // CodeMirror editor field.
 // @see https://codemirror.net
 (function() {
   "use strict";
+
+  function uploadAndInsertImage(editor, position, imageFile, callback) {
+    var fileName = imageFile.name;
+
+    // Add temporary uploading message
+    var uploadingMessage = '![Uploading ' + fileName + '…]()';
+    editor.doc.setSelection(position);
+    editor.doc.replaceSelection(uploadingMessage);
+
+    // Upload the file using the image upload ability from the Summernote editor
+    var data = new FormData();
+    data.append('file', imageFile);
+
+    $.ajax({
+      data:        data,
+      type:        'POST',
+      url:         '/admin/active_admin_pro_summernote_images',
+      cache:       false,
+      contentType: false,
+      processData: false,
+
+      success: function(url) {
+        editor.doc.setSelection(position, { line: position.line, ch: position.ch + uploadingMessage.length });
+        editor.doc.replaceSelection('![' + fileName + '](' + url + ')');
+      },
+
+      error: function(err) {
+        var json_err = jQuery.parseJSON(err.responseText);
+        $('#wrapper').prepend('<div class="flashes animate"><div class="flash flash_notice">' + json_err.error + '</div></div>');
+        $('.note-editor .modal-dialog .note-image-input').val('');
+      },
+
+      complete: function() {
+        callback.call();
+      }
+    });
+  }
 
   App.register('component').enter(function() {
     var codemirrorInputs = $('.input.codemirror');
@@ -62,12 +102,23 @@
         codemirrorInput.focus();
       });
 
-      codemirrorInput.on('focus', function() {
-        wrapper.addClass('focused');
-      });
-
       codemirrorInput.on('blur', function() {
         wrapper.removeClass('focused');
+      });
+
+      codemirrorInput.on('drop', function(editor, event) {
+        globalEditor = editor;
+        var position = editor.coordsChar({ left: event.pageX, top: event.pageY });
+        var file = event.dataTransfer.files[0];
+
+        editor.setOption('readOnly', true);
+        uploadAndInsertImage(editor, position, file, function() {
+          editor.setOption('readOnly', false);
+        });
+      });
+
+      codemirrorInput.on('focus', function() {
+        wrapper.addClass('focused');
       });
     });
 

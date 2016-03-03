@@ -97,8 +97,8 @@
 
                 $.ajax({
                   data:        data,
-                  type:        "POST",
-                  url:         "/admin/active_admin_pro_summernote_images",
+                  type:        'POST',
+                  url:         '/admin/active_admin_pro_summernote_images',
                   cache:       false,
                   contentType: false,
                   processData: false,
@@ -109,7 +109,7 @@
                   },
 
                   error: function(err) {
-                    var json_err = jQuery.parseJSON(err.responseText)
+                    var json_err = jQuery.parseJSON(err.responseText);
                     $('#wrapper').prepend('<div class="flashes animate"><div class="flash flash_notice">' + json_err.error + '</div></div>');
                     $('.note-editor .modal-dialog .note-image-input').val('');
                   }
