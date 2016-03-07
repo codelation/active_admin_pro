@@ -21,19 +21,19 @@
     ['code', ['codeview', 'fullscreen']]
   ];
 
-  function insertImage(imageUrl, imageLink, imageClass, summernoteInput) {
+  function insertImage(summernoteInput, imageUrl, imageLink, imageClass) {
     var link = document.createElement('a');
     var img = document.createElement('img');
     var insertedImage;
-    if(imageLink !== "") {
-      link.setAttribute("href", imageLink);
-      img.setAttribute("src", imageUrl);
-      img.setAttribute("class", imageClass);
+    if (imageLink !== '') {
+      link.setAttribute('href', imageLink);
+      img.setAttribute('src', imageUrl);
+      img.setAttribute('class', imageClass);
       link.appendChild(img);
       insertedImage = link;
     } else {
-      img.setAttribute("src", imageUrl);
-      img.setAttribute("class", imageClass);
+      img.setAttribute('src', imageUrl);
+      img.setAttribute('class', imageClass);
       insertedImage = img;
     }
     summernoteInput.summernote('insertNode', insertedImage);
@@ -136,7 +136,7 @@
 
                   success: function(url) {
                     dialog.dialog('close').remove();
-                    insertImage(url, imageLink, imageClass, summernoteInput);
+                    insertImage(summernoteInput, url, imageLink, imageClass);
                   },
 
                   error: function(err) {
@@ -148,7 +148,7 @@
                 return;
               } else if (imageUrl.trim() !== '') {
                 dialog.dialog('close').remove();
-                insertImage(imageUrl, imageLink, imageClass, summernoteInput);
+                insertImage(summernoteInput, imageUrl, imageLink, imageClass);
                 return;
               }
 
