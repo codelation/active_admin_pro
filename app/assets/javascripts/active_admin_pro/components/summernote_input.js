@@ -21,6 +21,22 @@
     ['code', ['codeview', 'fullscreen']]
   ];
 
+  function insertImage(summernoteInput, imageUrl, imageLink) {
+    var link = document.createElement('a');
+    var img = document.createElement('img');
+    var insertedImage;
+    if (imageLink !== '') {
+      link.setAttribute('href', imageLink);
+      img.setAttribute('src', imageUrl);
+      link.appendChild(img);
+      insertedImage = link;
+    } else {
+      img.setAttribute('src', imageUrl);
+      insertedImage = img;
+    }
+    summernoteInput.summernote('insertNode', insertedImage);
+  }
+
   function activateBehavior() {
     $('.input.summernote').each(function() {
       var wrapper = $(this);
@@ -72,6 +88,10 @@
         dialogHtml += '<label for="summernote_image_url">Image URL</label>';
         dialogHtml += '<input id="summernote_image_url" type="text">';
         dialogHtml += '</div>';
+        dialogHtml += '<div class="input text">';
+        dialogHtml += '<label for="summernote_image_link">Link Image to URL</label>';
+        dialogHtml += '<input id="summernote_image_link" type="text">';
+        dialogHtml += '</div>';
         dialogHtml += '</div>';
         $('#wrapper').prepend(dialogHtml);
         $('#summernote_image_dialog').dialog({
@@ -85,6 +105,7 @@
             click: function() {
               var imageFile = $('#summernote_image_file')[0].files[0];
               var imageUrl = $('#summernote_image_url').val();
+              var imageLink = $('#summernote_image_link').val();
               var dialog = $(this);
 
               if (imageFile !== undefined) {
@@ -105,7 +126,7 @@
 
                   success: function(url) {
                     dialog.dialog('close').remove();
-                    summernoteInput.summernote('insertImage', url, url.substring(url.lastIndexOf('/') + 1));
+                    insertImage(summernoteInput, url, imageLink);
                   },
 
                   error: function(err) {
@@ -117,7 +138,7 @@
                 return;
               } else if (imageUrl.trim() !== '') {
                 dialog.dialog('close').remove();
-                summernoteInput.summernote('insertImage', imageUrl, imageUrl.substring(imageUrl.lastIndexOf('/') + 1));
+                insertImage(summernoteInput, imageUrl, imageLink);
                 return;
               }
 
