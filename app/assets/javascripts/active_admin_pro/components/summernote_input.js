@@ -98,7 +98,7 @@
         dialogHtml += '<label for="summernote_image_class">Image Class</label>';
         dialogHtml += '<select id="summernote_image_class">';
         dialogHtml += '<option value="">no class</option>';
-        dialogHtml += '<option value="orange-border">border</option>';
+        dialogHtml += '<option value="border">border</option>';
         dialogHtml += '</select>';
         dialogHtml += '</div>';
         dialogHtml += '</div>';
