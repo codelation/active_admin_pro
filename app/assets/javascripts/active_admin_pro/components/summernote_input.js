@@ -91,7 +91,7 @@
         dialogHtml += '<input id="summernote_image_url" type="text">';
         dialogHtml += '</div>';
         dialogHtml += '<div class="input text">';
-        dialogHtml += '<label for="summernote_image_link">Image Link</label>';
+        dialogHtml += '<label for="summernote_image_link">Link Image to URL</label>';
         dialogHtml += '<input id="summernote_image_link" type="text">';
         dialogHtml += '</div>';
         dialogHtml += '<div class="input text">';
