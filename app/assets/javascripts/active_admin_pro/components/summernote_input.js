@@ -21,19 +21,17 @@
     ['code', ['codeview', 'fullscreen']]
   ];
 
-  function insertImage(summernoteInput, imageUrl, imageLink, imageClass) {
+  function insertImage(summernoteInput, imageUrl, imageLink) {
     var link = document.createElement('a');
     var img = document.createElement('img');
     var insertedImage;
     if (imageLink !== '') {
       link.setAttribute('href', imageLink);
       img.setAttribute('src', imageUrl);
-      img.setAttribute('class', imageClass);
       link.appendChild(img);
       insertedImage = link;
     } else {
       img.setAttribute('src', imageUrl);
-      img.setAttribute('class', imageClass);
       insertedImage = img;
     }
     summernoteInput.summernote('insertNode', insertedImage);
@@ -91,15 +89,8 @@
         dialogHtml += '<input id="summernote_image_url" type="text">';
         dialogHtml += '</div>';
         dialogHtml += '<div class="input text">';
-        dialogHtml += '<label for="summernote_image_link">Image Link</label>';
+        dialogHtml += '<label for="summernote_image_link">Link Image to URL</label>';
         dialogHtml += '<input id="summernote_image_link" type="text">';
-        dialogHtml += '</div>';
-        dialogHtml += '<div class="input text">';
-        dialogHtml += '<label for="summernote_image_class">Image Class</label>';
-        dialogHtml += '<select id="summernote_image_class">';
-        dialogHtml += '<option value="">no class</option>';
-        dialogHtml += '<option value="border">border</option>';
-        dialogHtml += '</select>';
         dialogHtml += '</div>';
         dialogHtml += '</div>';
         $('#wrapper').prepend(dialogHtml);
@@ -115,7 +106,6 @@
               var imageFile = $('#summernote_image_file')[0].files[0];
               var imageUrl = $('#summernote_image_url').val();
               var imageLink = $('#summernote_image_link').val();
-              var imageClass = $('#summernote_image_class option:selected').val();
               var dialog = $(this);
 
               if (imageFile !== undefined) {
@@ -136,7 +126,7 @@
 
                   success: function(url) {
                     dialog.dialog('close').remove();
-                    insertImage(summernoteInput, url, imageLink, imageClass);
+                    insertImage(summernoteInput, url, imageLink);
                   },
 
                   error: function(err) {
@@ -148,7 +138,7 @@
                 return;
               } else if (imageUrl.trim() !== '') {
                 dialog.dialog('close').remove();
-                insertImage(summernoteInput, imageUrl, imageLink, imageClass);
+                insertImage(summernoteInput, imageUrl, imageLink);
                 return;
               }
 
