@@ -31,7 +31,8 @@ $summernote-toolbar-background-color: #f7f7f7;
       padding: 0;
     }
 
-    .note-fontsize .dropdown-menu {
+    .note-fontsize .dropdown-menu,
+    .note-style .dropdown-menu {
       max-height: 200px;
       overflow: auto;
     }
