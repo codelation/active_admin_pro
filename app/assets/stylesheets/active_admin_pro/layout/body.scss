@@ -36,25 +36,3 @@ html.turbolinks-progress-bar::before {
   background-color: $accent-color !important;
   height: 4px !important;
 }
-
-body:after {
-  @include transition(background-color 1s ease);
-  background-color: rgba(0, 0, 0, 0);
-  bottom: 0;
-  content: "";
-  cursor: wait;
-  left: 999999px;
-  position: fixed;
-  top: 4px;
-  width: 100%;
-  z-index: 999999;
-}
-
-body.loading {
-  cursor: wait;
-
-  &:after {
-    background-color: rgba(color($primary-color, 900), 0.2);
-    left: 0;
-  }
-}

@@ -14,3 +14,7 @@ a {
     color: $link-color-active;
   }
 }
+
+body.loading a.active {
+  cursor: wait;
+}
