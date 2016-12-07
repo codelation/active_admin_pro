@@ -8,7 +8,7 @@
   position: relative;
 
   label {
-    @include transform(scale(1.2) translateY(-$base-font-size));
+    @include transform(scale(1) translateY(-2.8 * $base-font-size));
     @include transform-origin(0 0);
     @include transition(font-size 180ms $transition-timing, transform 180ms $transition-timing);
     color: $input-placeholder-color;
